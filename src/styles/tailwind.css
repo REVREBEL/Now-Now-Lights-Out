@@ -2,3 +2,16 @@
 @source '../**/*.{js,ts,jsx,tsx}';
 
 @import 'tw-animate-css';
+
+/* The hero now uses only the street background image. Remove the legacy
+   right-side photo collage without disturbing the hero copy or background. */
+section.relative.min-h-screen.flex.items-end.bg-cover.bg-center
+  > div.relative.z-10.w-full.grid
+  > div:last-child {
+  display: none !important;
+}
+
+section.relative.min-h-screen.flex.items-end.bg-cover.bg-center
+  > div.relative.z-10.w-full.grid {
+  display: flex !important;
+}
