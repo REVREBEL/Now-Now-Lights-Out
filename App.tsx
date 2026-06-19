@@ -12,7 +12,7 @@ import {
   ShoppingBag,
 } from "lucide-react";
 import backgroundHero from "../../images/site/background-hero.jpg";
-import heroMainPost from "../../images/site/hero-main-post.png";
+// import heroMainPost from "../../images/site/hero-main-post.png";
 import spotlightImage from "../../images/site/spotlight.png";
 import cabinCrashersImage from "../../images/categories/cabin-crashers.jpg";
 import afterNohoImage from "../../images/categories/after-noho.jpg";
