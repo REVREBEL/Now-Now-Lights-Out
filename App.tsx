@@ -423,12 +423,8 @@ export default function App() {
           <div className="relative h-full min-h-[60vw] md:min-h-0 overflow-hidden">
             {/* Photo 1 — large, fills most of column */}
             <div className="absolute inset-0">
-              <img
-                src={heroMainPost}
-                alt="Guest lights-out moment"
-                className="w-full h-full object-cover"
-                style={{ opacity: 0.85 }}
-              />
+     
+     
               <div className="absolute inset-0" style={{ background: `linear-gradient(to right, ${DARK} 0%, transparent 30%)` }} />
               <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${DARK} 0%, transparent 30%)` }} />
             </div>
