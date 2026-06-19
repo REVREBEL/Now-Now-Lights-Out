@@ -1,0 +1,239 @@
+--- /dev/fd/63	2026-06-19 16:55:46.021107550 +0000
++++ src/app/App.tsx	2026-06-19 16:52:43.783441858 +0000
+@@ -11,6 +11,29 @@
+   Check,
+   ShoppingBag,
+ } from "lucide-react";
++import backgroundHero from "../../images/site/background-hero.jpg";
++import heroMainPost from "../../images/site/hero-main-post.png";
++import spotlightImage from "../../images/site/spotlight.png";
++import cabinCrashersImage from "../../images/categories/cabin-crashers.jpg";
++import afterNohoImage from "../../images/categories/after-noho.jpg";
++import morningAfterModeImage from "../../images/categories/morning-after-mode.jpg";
++import redEyeArrivalsImage from "../../images/categories/red-eye-arrivals.jpg";
++import soloSleepClubImage from "../../images/categories/solo-sleep-club.jpg";
++import imagePost01 from "../../images/image_post_01.png";
++import imagePost02 from "../../images/image_post_02.png";
++import imagePost03 from "../../images/image_post_03.png";
++import imagePost04 from "../../images/image_post_04.png";
++import imagePost05 from "../../images/image_post_05.png";
++import imagePost06 from "../../images/image_post_06.png";
++import imagePost07 from "../../images/image_post_07.png";
++import imagePost08 from "../../images/image_post_08.png";
++import imagePost09 from "../../images/image_post_09.png";
++import imagePost10 from "../../images/image_post_10.png";
++import imagePost11 from "../../images/image_post_11.png";
++import imagePost12 from "../../images/image_post_12.png";
++import imagePost13 from "../../images/image_post_13.png";
++import imagePost14 from "../../images/image_post_14.png";
++import imagePost15 from "../../images/image_post_15.png";
+ 
+ // ─── Brand tokens ────────────────────────────────────────────────────────────
+ const BURGUNDY = "#681238";
+@@ -43,31 +66,31 @@
+     label: "Cabin Crashers",
+     desc: "In the room. Mask on. Door closed.",
+     count: 318,
+-    img: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=700&h=900&fit=crop&auto=format",
++    img: cabinCrashersImage,
+   },
+   noho: {
+     label: "After NoHo",
+     desc: "Coming back after a night out.",
+     count: 241,
+-    img: "https://images.unsplash.com/photo-1712961751512-412da27901e4?w=700&h=900&fit=crop&auto=format",
++    img: afterNohoImage,
+   },
+   morning: {
+     label: "Morning After Mode",
+     desc: "Coffee, messy hair, zero regrets.",
+     count: 197,
+-    img: "https://images.unsplash.com/photo-1677161190077-50bf52cc7919?w=700&h=900&fit=crop&auto=format",
++    img: morningAfterModeImage,
+   },
+   solo: {
+     label: "Solo Sleep Club",
+     desc: "The whole bed, all yours.",
+     count: 284,
+-    img: "https://images.unsplash.com/photo-1778658557549-3e731fff5d7c?w=700&h=900&fit=crop&auto=format",
++    img: soloSleepClubImage,
+   },
+   redeye: {
+     label: "Red Eye Arrivals",
+     desc: "Landed. Checked in. Out cold.",
+     count: 156,
+-    img: "https://images.unsplash.com/photo-1767556879107-c98cebc84a10?w=700&h=900&fit=crop&auto=format",
++    img: redEyeArrivalsImage,
+   },
+ };
+ 
+@@ -85,105 +108,105 @@
+     id: 1, cat: "cabin", handle: "@mara.sleeps",
+     caption: "Day 1 done. Mask on. NYC can wait until tomorrow.",
+     likes: 847, comments: 42,
+-    img: "https://images.unsplash.com/photo-1559414059-34fe0a59e57a?w=600&h=800&fit=crop&auto=format",
++    img: imagePost01,
+     tags: ["#NowNowLightsOut", "#CabinCrasher"], featured: true, aspect: "aspect-[3/4]",
+   },
+   {
+     id: 2, cat: "noho", handle: "@theov_nyc",
+     caption: "3am. NoHo treated me well. Now Now has me better.",
+     likes: 1203, comments: 67,
+-    img: "https://images.unsplash.com/photo-1712961751512-412da27901e4?w=600&h=450&fit=crop&auto=format",
++    img: imagePost02,
+     tags: ["#NowNowLightsOut", "#AfterNoHo", "#LightsOutNoHo"], aspect: "aspect-[4/3]",
+   },
+   {
+     id: 3, cat: "morning", handle: "@jadespaces",
+     caption: "Mask still on. Coffee secured. Counts as recovery.",
+     likes: 562, comments: 28,
+-    img: "https://images.unsplash.com/photo-1611971263243-4beb5bc92c35?w=600&h=800&fit=crop&auto=format",
++    img: imagePost03,
+     tags: ["#NowNowLightsOut", "#MorningAfterMode"], aspect: "aspect-[3/4]",
+   },
+   {
+     id: 4, cat: "solo", handle: "@priya.wanders",
+     caption: "Solo traveler. Zero compromises. Eight hours of silence.",
+     likes: 991, comments: 55,
+-    img: "https://images.unsplash.com/photo-1778658557549-3e731fff5d7c?w=600&h=450&fit=crop&auto=format",
++    img: imagePost04,
+     tags: ["#NowNowLightsOut", "#SoloSleepClub", "#SmallRoomBigSleep"], aspect: "aspect-[4/3]",
+   },
+   {
+     id: 5, cat: "redeye", handle: "@samburrows_",
+     caption: "LAX→JFK. 6hr delay. Mask already on before check-in.",
+     likes: 1478, comments: 89,
+-    img: "https://images.unsplash.com/photo-1767556879107-c98cebc84a10?w=600&h=900&fit=crop&auto=format",
++    img: imagePost05,
+     tags: ["#NowNowLightsOut", "#RedEyeArrivals"], featured: true, aspect: "aspect-[2/3]",
+   },
+   {
+     id: 6, cat: "cabin", handle: "@yukitravel",
+     caption: "Compact room. Huge comfort. This is what I came for.",
+     likes: 733, comments: 31,
+-    img: "https://images.unsplash.com/photo-1647792855184-af42f1720b91?w=600&h=500&fit=crop&auto=format",
++    img: imagePost06,
+     tags: ["#NowNowLightsOut", "#CabinCrasher"], aspect: "aspect-[6/5]",
+   },
+   {
+     id: 7, cat: "morning", handle: "@clarabex",
+     caption: "Croissants. Coffee. Mask on forehead. Peak recovery.",
+     likes: 820, comments: 44,
+-    img: "https://images.unsplash.com/photo-1759221793465-4795ba2eaafc?w=600&h=750&fit=crop&auto=format",
++    img: imagePost07,
+     tags: ["#NowNowLightsOut", "#MorningAfterMode", "#EyesWideRested"], aspect: "aspect-[4/5]",
+   },
+   {
+     id: 8, cat: "noho", handle: "@lukefarrah",
+     caption: "Danced in SoHo. Ended up in NoHo. No regrets.",
+     likes: 654, comments: 19,
+-    img: "https://images.unsplash.com/photo-1506606401543-2e73709cebb4?w=600&h=400&fit=crop&auto=format",
++    img: imagePost08,
+     tags: ["#NowNowLightsOut", "#AfterNoHo", "#NoHoDreamMode"], aspect: "aspect-[3/2]",
+   },
+   {
+     id: 9, cat: "solo", handle: "@danitravelss",
+     caption: "Table for one. Bed for one. Sleep for ten.",
+     likes: 1102, comments: 72,
+-    img: "https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4?w=600&h=900&fit=crop&auto=format",
++    img: imagePost09,
+     tags: ["#NowNowLightsOut", "#SoloSleepClub", "#SleepNowNow"], aspect: "aspect-[2/3]",
+   },
+   {
+     id: 10, cat: "redeye", handle: "@jamesw_ooo",
+     caption: "Gate B17 to Now Now NoHo. Worth every minute of the delay.",
+     likes: 887, comments: 38,
+-    img: "https://images.unsplash.com/photo-1505811210036-052144988918?w=600&h=450&fit=crop&auto=format",
++    img: imagePost10,
+     tags: ["#NowNowLightsOut", "#RedEyeArrivals"], aspect: "aspect-[4/3]",
+   },
+   {
+     id: 11, cat: "morning", handle: "@zaraliu",
+     caption: "First morning in New York. Coffee first. Mask stays on.",
+     likes: 445, comments: 22,
+-    img: "https://images.unsplash.com/photo-1677161190077-50bf52cc7919?w=600&h=800&fit=crop&auto=format",
++    img: imagePost11,
+     tags: ["#NowNowLightsOut", "#MorningAfterMode"], aspect: "aspect-[3/4]",
+   },
+   {
+     id: 12, cat: "cabin", handle: "@nicoblanche",
+     caption: "Lights out. City still loud. Absolutely do not care.",
+     likes: 569, comments: 14,
+-    img: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=600&h=400&fit=crop&auto=format",
++    img: imagePost12,
+     tags: ["#NowNowLightsOut", "#CabinCrasher", "#SmallRoomBigSleep"], aspect: "aspect-[3/2]",
+   },
+   {
+     id: 13, cat: "cabin", handle: "@elanross",
+     caption: "Nothing like crisp sheets after a long week of everything.",
+     likes: 612, comments: 27,
+-    img: "https://images.unsplash.com/photo-1711059985570-4c32ed12a12c?w=600&h=800&fit=crop&auto=format",
++    img: imagePost13,
+     tags: ["#NowNowLightsOut", "#CabinCrasher"], aspect: "aspect-[3/4]",
+   },
+   {
+     id: 14, cat: "noho", handle: "@margotk_nyc",
+     caption: "One more block. One more bar. One more night. Mask wins.",
+     likes: 798, comments: 41,
+-    img: "https://images.unsplash.com/photo-1599394270986-59f54dc05699?w=600&h=900&fit=crop&auto=format",
++    img: imagePost14,
+     tags: ["#NowNowLightsOut", "#AfterNoHo", "#LightsOutNoHo"], aspect: "aspect-[2/3]",
+   },
+   {
+     id: 15, cat: "solo", handle: "@pierod_roams",
+     caption: "Solo isn't lonely. Solo is the whole bed.",
+     likes: 934, comments: 53,
+-    img: "https://images.unsplash.com/photo-1586294310477-243d2beb0be1?w=600&h=400&fit=crop&auto=format",
++    img: imagePost15,
+     tags: ["#NowNowLightsOut", "#SoloSleepClub", "#NowNowNoHo"], aspect: "aspect-[3/2]",
+   },
+ ];
+@@ -336,9 +359,9 @@
+       {/* ══════════════════════════════════════════════════════════════════════ */}
+       {/*  HERO                                                                 */}
+       {/* ══════════════════════════════════════════════════════════════════════ */}
+-      <section className="relative min-h-screen flex items-end" style={{ paddingTop: "80px" }}>
+-        {/* Background glow */}
+-        <div className="absolute inset-0 pointer-events-none" style={{ background: `radial-gradient(ellipse 70% 60% at 15% 60%, rgba(104,18,56,0.22) 0%, transparent 65%), radial-gradient(ellipse 50% 40% at 85% 30%, rgba(0,89,81,0.12) 0%, transparent 65%)` }} />
++      <section className="relative min-h-screen flex items-end bg-cover bg-center" style={{ paddingTop: "80px", backgroundImage: `url(${backgroundHero})` }}>
++        {/* Background image treatment */}
++        <div className="absolute inset-0 pointer-events-none" style={{ background: `linear-gradient(90deg, rgba(10,5,8,0.96) 0%, rgba(10,5,8,0.82) 48%, rgba(10,5,8,0.38) 100%), radial-gradient(ellipse 50% 40% at 85% 30%, rgba(0,89,81,0.18) 0%, transparent 65%)` }} />
+ 
+         <div className="relative z-10 w-full grid md:grid-cols-[1fr_42%] gap-0 items-end min-h-[calc(100vh-80px)]">
+ 
+@@ -401,7 +424,7 @@
+             {/* Photo 1 — large, fills most of column */}
+             <div className="absolute inset-0">
+               <img
+-                src="https://images.unsplash.com/photo-1559414059-34fe0a59e57a?w=800&h=1100&fit=crop&auto=format"
++                src={heroMainPost}
+                 alt="Guest lights-out moment"
+                 className="w-full h-full object-cover"
+                 style={{ opacity: 0.85 }}
+@@ -413,7 +436,7 @@
+             <div className="absolute bottom-16 right-6 w-[42%] shadow-2xl z-10 border" style={{ borderColor: `${BLUSH}22` }}>
+               <div className="aspect-[3/4] overflow-hidden">
+                 <img
+-                  src="https://images.unsplash.com/photo-1767556879107-c98cebc84a10?w=400&h=530&fit=crop&auto=format"
++                  src={imagePost05}
+                   alt="Red eye arrival"
+                   className="w-full h-full object-cover"
+                 />
+@@ -601,7 +624,7 @@
+           <div className="relative">
+             <div className="aspect-[3/4] overflow-hidden">
+               <img
+-                src="https://images.unsplash.com/photo-1559414059-34fe0a59e57a?w=800&h=1050&fit=crop&auto=format"
++                src={spotlightImage}
+                 alt="Featured guest submission"
+                 className="w-full h-full object-cover"
+               />
+@@ -621,7 +644,7 @@
+             <div className="flex items-center gap-3 mb-8 pb-8" style={{ borderBottom: `1px solid rgba(247,183,251,0.2)` }}>
+               <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
+                 <img
+-                  src="https://images.unsplash.com/photo-1559414059-34fe0a59e57a?w=64&h=64&fit=crop&auto=format"
++                  src={imagePost01}
+                   alt="Mara Osei"
+                   className="w-full h-full object-cover"
+                 />
