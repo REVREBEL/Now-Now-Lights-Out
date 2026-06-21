@@ -24,11 +24,6 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  define: {
-    // App.tsx no longer imports the removed hero collage image, but the
-    // previous JSX reference may still exist until the component is cleaned up.
-    heroMainPost: JSON.stringify(''),
-  },
   resolve: {
     alias: {
       // Alias @ to the src directory
