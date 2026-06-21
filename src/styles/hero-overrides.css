@@ -63,6 +63,15 @@
   z-index: 10;
 }
 
+/* Preserve the original visual size of the floating UGC card.
+   Its old 44% width was relative to a 42%-wide column; once the parent became
+   full width, that same percentage made the card much too large. */
+#root > div > nav + section > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
+  width: clamp(220px, 18vw, 340px);
+  right: 1.25rem;
+  bottom: 3.5rem;
+}
+
 @media (max-width: 767px) {
   #root > div > nav + section > div:nth-child(2) > div:first-child {
     max-width: none;
