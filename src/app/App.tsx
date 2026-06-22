@@ -62,11 +62,11 @@ interface Photo {
 
 // ─── Category metadata ────────────────────────────────────────────────────────
 const CAT_META: Record<Exclude<Cat, "all">, { label: string; desc: string; count: number; img: string }> = {
-  cabin:   { label: "Cabin Crashers",       desc: "In the room. Mask on. Door closed.",      count: 318, img: catCabin   },
-  noho:    { label: "After NoHo",           desc: "Coming back after a night out.",          count: 241, img: catNoho   },
-  morning: { label: "Morning After Mode",   desc: "Coffee, messy hair, zero regrets.",       count: 197, img: catMorning },
-  solo:    { label: "Solo Sleep Club",      desc: "The whole bed, all yours.",               count: 284, img: catSolo   },
-  redeye:  { label: "Red Eye Arrivals",     desc: "Landed. Checked in. Out cold.",           count: 156, img: catRedeye },
+  cabin:   { label: "Cabin Crashers",       desc: "Guests wearing the mask in their cabin.",      count: 318, img: catCabin   },
+  noho:    { label: "After NoHo",           desc: "Guests winding down after a night out.",          count: 241, img: catNoho   },
+  morning: { label: "Morning After Mode",   desc: "Sleep mask, coffee, messy hair, and recovery energy.",       count: 197, img: catMorning },
+  solo:    { label: "Solo Traveler Sleep Club",      desc: "Guests celebrating the freedom of traveling solo.",               count: 284, img: catSolo   },
+  redeye:  { label: "Red Eye Arrivals",     desc: "Travelers checking in after flights, trains, and late-night arrivals.",           count: 156, img: catRedeye },
 };
 
 const FILTER_TABS: { key: Cat; label: string }[] = [
@@ -74,7 +74,7 @@ const FILTER_TABS: { key: Cat; label: string }[] = [
   { key: "cabin",   label: "Cabin Crashers"      },
   { key: "noho",    label: "After NoHo"          },
   { key: "morning", label: "Morning After Mode"  },
-  { key: "solo",    label: "Solo Sleep Club"     },
+  { key: "solo",    label: "Solo Traveler Sleep Club"     },
   { key: "redeye",  label: "Red Eye Arrivals"    },
 ];
 
@@ -346,7 +346,7 @@ export default function App() {
           </span>
         </div>
         <div className="hidden md:flex items-center gap-7">
-          {(["Campaign", "Gallery", "Submit"] as const).map(l => (
+          {(["How It Works", "Gallery", "Submit"] as const).map(l => (
             <button
               key={l}
               onClick={() => {
@@ -371,7 +371,7 @@ export default function App() {
             onMouseLeave={e => { const el = e.currentTarget; el.style.background = "transparent"; el.style.color = PEACH; }}
           >
             <ShoppingBag className="w-3.5 h-3.5" />
-            Shop the Mask
+            Shop the Sleep Kit
           </a>
           <button
             onClick={() => submitRef.current?.scrollIntoView({ behavior: "smooth" })}
@@ -380,7 +380,7 @@ export default function App() {
             onMouseEnter={e => { const el = e.currentTarget; el.style.background = BURGUNDY; el.style.color = BLUSH; }}
             onMouseLeave={e => { const el = e.currentTarget; el.style.background = BLUSH; el.style.color = BURGUNDY; }}
           >
-            Join Campaign
+            Share Your Moment
           </button>
         </div>
       </nav>
@@ -400,7 +400,7 @@ export default function App() {
           {/* Left — copy */}
           <div className="flex flex-col justify-end px-6 md:px-12 lg:px-16 pb-16 pt-16 md:pt-0">
             <p className="text-[10px] tracking-[0.45em] uppercase mb-6" style={{ color: SAGE, fontFamily: "monospace" }}>
-              #NowNowLightsOut — Guest Campaign 2024
+              NOW NOW, LIGHTS OUT
             </p>
             <h1
               style={{ ...displaySx, fontSize: "clamp(5rem,13vw,12rem)", lineHeight: 0.85, letterSpacing: "-0.01em", color: PEACH, marginBottom: "0.12em" }}
@@ -423,9 +423,7 @@ export default function App() {
               You Should.
             </h2>
             <p className="text-base leading-relaxed mb-10 max-w-md" style={{ color: `${PEACH}99`, fontWeight: 300 }}>
-              Show us your Now Now lights-out moment. Post wearing your sleep mask,
-              tag the hotel, and use the campaign hashtag for a chance to be featured
-              or win a stay perk.
+              Check in. Go out. Come back. Put the city on mute. Our signature Now Now sleep mask is your official permission slip to rest dramatically after a full day in New York.
             </p>
             <div className="flex flex-wrap gap-3 mb-10">
               <button
@@ -435,7 +433,7 @@ export default function App() {
                 onMouseEnter={e => { const el = e.currentTarget; el.style.background = BURGUNDY; el.style.color = BLUSH; }}
                 onMouseLeave={e => { const el = e.currentTarget; el.style.background = BLUSH; el.style.color = BURGUNDY; }}
               >
-                See the Gallery
+                Book Your Cabin
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
               <a
@@ -446,7 +444,7 @@ export default function App() {
                 onMouseLeave={e => (e.currentTarget.style.borderColor = "rgba(249,226,211,0.25)")}
               >
                 <ShoppingBag className="w-4 h-4" />
-                Shop the Mask
+                Shop the Sleep Kit
               </a>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -512,20 +510,20 @@ export default function App() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <span className="text-[10px] tracking-[0.4em] uppercase block mb-3" style={{ color: `${BURGUNDY}88` }}>How It Works</span>
+              <span className="text-[10px] tracking-[0.4em] uppercase block mb-3" style={{ color: `${BURGUNDY}88` }}>How to Go Lights Out</span>
               <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BURGUNDY, lineHeight: 0.9 }}>
-                Three steps.<br />No sleep sacrificed.
+                Four steps.<br />Then lights out.
               </h2>
             </div>
             <p className="text-sm leading-relaxed max-w-xs" style={{ color: `${BURGUNDY}99`, fontWeight: 300 }}>
-              Tag us, use a hashtag, and your moment could land in this gallery — or earn you a stay perk.
+              Put on your mask, capture the moment, tag @staynownow with #NowNowLightsOut, and you could be featured or receive a monthly sleep perk.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-px" style={{ background: `${BURGUNDY}22` }}>
             {[
-              { n: "01", title: "Wear it anywhere",  body: "In the cabin, the lounge, the cab home, or on a rooftop at 3am. Mask on. Moment ready." },
-              { n: "02", title: "Post & tag",        body: "Share on Instagram. Tag @staynownow and use any campaign hashtag with your post." },
-              { n: "03", title: "Get featured",      body: "We curate the best into this gallery. Top submissions win a stay perk. Sleep tight." },
+              { n: "01", title: "Put on your sleep mask",  body: "Your Now Now sleep mask is the official signal that sleep mode has been activated." },
+              { n: "02", title: "Snap your lights-out moment",        body: "Capture the cabin crash, the post-NoHo wind-down, the red-eye arrival, or wherever the city finally catches up with you." },
+              { n: "03", title: "Tag and share",      body: "Tag @staynownow and use #NowNowLightsOut. Selected moments may be featured, and one featured guest receives a sleep perk each month." },
             ].map(step => (
               <div key={step.n} className="p-10" style={{ background: PEACH }}>
                 <div style={{ ...displaySx, fontSize: "4.5rem", color: `${BURGUNDY}22`, lineHeight: 1, marginBottom: "1.5rem" }}>{step.n}</div>
@@ -544,9 +542,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
             <div>
-              <span className="text-[10px] tracking-[0.4em] uppercase block mb-3" style={{ color: `${BURGUNDY}88` }}>Five Lights-Out Moods</span>
+              <span className="text-[10px] tracking-[0.4em] uppercase block mb-3" style={{ color: `${BURGUNDY}88` }}>Featured Guest Moments</span>
               <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BURGUNDY, lineHeight: 0.9 }}>
-                Which one<br />are you?
+                Guest Sleep Mode:<br />Activated
               </h2>
             </div>
             <button
@@ -554,7 +552,7 @@ export default function App() {
               className="self-start md:self-end flex items-center gap-2 text-sm tracking-[0.15em] uppercase transition-colors"
               style={{ color: BURGUNDY, background: "none", border: "none", cursor: "pointer" }}
             >
-              Browse all <ArrowRight className="w-4 h-4" />
+              See Guest Moments <ArrowRight className="w-4 h-4" />
             </button>
           </div>
 
@@ -609,10 +607,10 @@ export default function App() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <span className="text-[10px] tracking-[0.4em] uppercase block mb-3" style={{ color: `${BURGUNDY}88`, fontFamily: "monospace" }}>
-                Guest Gallery — {PHOTOS.length} Curated Submissions
+                Guest Sleep Mode: Activated
               </span>
               <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BURGUNDY, lineHeight: 0.9 }}>
-                Lights Out,<br /><span style={{ color: TEAL }}>Moments On.</span>
+                Guest Moments,<br /><span style={{ color: TEAL }}>Sleep Mode On.</span>
               </h2>
             </div>
             <div className="flex items-center gap-2" style={{ color: SAGE }}>
@@ -677,9 +675,9 @@ export default function App() {
 
           {/* Text */}
           <div>
-            <span className="text-[10px] tracking-[0.4em] uppercase block mb-6" style={{ color: `${PEACH}88` }}>Featured Submission</span>
+            <span className="text-[10px] tracking-[0.4em] uppercase block mb-6" style={{ color: `${PEACH}88` }}>Monthly Sleep Perk</span>
             <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4.5rem)", color: PEACH, lineHeight: 0.88, marginBottom: "1.5rem" }}>
-              &ldquo;Technically still asleep. Masks never came off.&rdquo;
+              Each month, one featured guest moment receives a sleep perk.
             </h2>
             <div
               className="flex items-center gap-3 mb-8 pb-8"
@@ -713,7 +711,7 @@ export default function App() {
               onMouseEnter={e => (e.currentTarget.style.opacity = "0.7")}
               onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
             >
-              Browse After NoHo <ArrowRight className="w-4 h-4" />
+              See Guest Moments <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -742,16 +740,14 @@ export default function App() {
                 </span>
               </div>
             </div>
-            <span className="text-[10px] tracking-[0.4em] uppercase block mb-5" style={{ color: SAGE }}>Submit Your Moment</span>
+            <span className="text-[10px] tracking-[0.4em] uppercase block mb-5" style={{ color: SAGE }}>Show Us Your Now Now Lights-Out Moment</span>
             <h2 style={{ ...displaySx, fontSize: "clamp(3rem,7vw,5.5rem)", color: PEACH, lineHeight: 0.88, marginBottom: "1.5rem" }}>
-              Your moment<br />
+              Your lights-out moment<br />
               <span style={{ color: BLUSH }}>belongs here.</span>
             </h2>
             <p className="text-sm leading-relaxed mb-8 max-w-sm" style={{ color: `${PEACH}77`, fontWeight: 300 }}>
-              Post on Instagram, tag{" "}
-              <span style={{ color: BLUSH }}>@staynownow</span>, then fill this form
-              so we can track your submission. We curate weekly — a stay perk might
-              find its way back to you.
+              Post a photo or Reel wearing your Now Now sleep mask, tag{" "}
+              <span style={{ color: BLUSH }}>@staynownow</span>, and use #NowNowLightsOut. Selected guest moments may be featured, and each month one featured guest receives a sleep perk.
             </p>
             <div className="flex items-center gap-3 text-sm mb-6" style={{ color: SAGE }}>
               <Instagram className="w-4 h-4 flex-shrink-0" />
@@ -775,17 +771,17 @@ export default function App() {
                   <Check className="w-7 h-7" style={{ color: TEAL }} />
                 </div>
                 <h3 style={{ ...displaySx, fontSize: "2rem", color: PEACH, marginBottom: "0.75rem", fontStyle: "normal" }}>
-                  Submission received.
+                  Lights-out moment received.
                 </h3>
                 <p className="text-sm leading-relaxed mb-8" style={{ color: `${PEACH}77` }}>
-                  We&apos;ll review your post and reach out if it makes the gallery. Sleep tight.
+                  We&apos;ll review your post and reach out if it is selected for the guest gallery or monthly sleep perk.
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ name: "", handle: "", category: "", caption: "" }); }}
                   className="text-[11px] tracking-[0.18em] uppercase px-5 py-3 border transition-colors"
                   style={{ borderColor: `${BLUSH}33`, color: BLUSH, background: "none", cursor: "pointer" }}
                 >
-                  Submit another
+                  Share another moment
                 </button>
               </div>
             ) : (
@@ -882,7 +878,7 @@ export default function App() {
                   </label>
                   <textarea
                     rows={3}
-                    placeholder="What was your lights-out moment?"
+                    placeholder="Tell us about your Now Now lights-out moment."
                     value={form.caption}
                     onChange={e => setForm(f => ({ ...f, caption: e.target.value }))}
                     className="w-full px-4 py-3 text-sm outline-none border transition-colors resize-none"
@@ -900,7 +896,7 @@ export default function App() {
                   onMouseLeave={e => { const el = e.currentTarget; el.style.background = BLUSH; el.style.color = BURGUNDY; }}
                 >
                   <Send className="w-4 h-4" />
-                  Submit My Moment
+                  Share Your Lights-Out Moment
                 </button>
               </form>
             )}
@@ -920,7 +916,7 @@ export default function App() {
                 <span style={{ ...displaySx, fontSize: "1rem", letterSpacing: "0.26em", color: PEACH, fontStyle: "normal" }}>NOW NOW NOHO</span>
               </div>
               <p className="text-xs leading-relaxed" style={{ color: `${PEACH}55`, fontWeight: 300 }}>
-                A compact hotel in the heart of NoHo, New York City. Small rooms. Big city. Stylish sleep.
+                New York gave you stories. We gave you the mask.
               </p>
             </div>
             <div className="flex flex-col gap-3">
@@ -931,7 +927,7 @@ export default function App() {
             </div>
             <div className="flex flex-col gap-3">
               <span className="text-[10px] tracking-[0.3em] uppercase mb-1" style={{ color: SAGE }}>Links</span>
-              {["staynownow.com", "Shop the Mask", "Book a Stay", "Instagram"].map(l => (
+              {["staynownow.com", "Shop the Sleep Kit", "Book a Stay", "Instagram"].map(l => (
                 <a
                   key={l}
                   href="#"
@@ -950,7 +946,7 @@ export default function App() {
               © 2024 Now Now NoHo · New York City · NoHo
             </p>
             <p className="text-[10px] tracking-[0.2em]" style={{ color: `${PEACH}33` }}>
-              The city doesn&apos;t sleep. You should.
+              Tag @staynownow and use #NowNowLightsOut.
             </p>
           </div>
         </div>
