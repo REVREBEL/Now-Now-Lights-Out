@@ -1,0 +1,97 @@
+name: Apply approved copy directly
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/apply-copy-direct.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply-copy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Replace copy in source files
+        shell: python
+        run: |
+          from pathlib import Path
+
+          app_path = Path("src/app/App.tsx")
+          source = app_path.read_text(encoding="utf-8")
+
+          replacements = {
+              '"Campaign", "Gallery", "Submit"': '"How It Works", "Gallery", "Submit"',
+              'if (l === "Gallery")': 'if (l === "Gallery")',
+              'Shop the Mask': 'Shop the Sleep Kit',
+              'Join Campaign': 'Share Your Moment',
+              '#NowNowLightsOut — Guest Campaign 2024': 'NOW NOW, LIGHTS OUT',
+              'Show us your Now Now lights-out moment. Post wearing your sleep mask,\n              tag the hotel, and use the campaign hashtag for a chance to be featured\n              or win a stay perk.': 'Check in. Go out. Come back. Put the city on mute. Our signature Now Now sleep mask is your official permission slip to rest dramatically after a full day in New York.',
+              'See the Gallery': 'Book Your Cabin',
+              '>How It Works</span>': '>How to Go Lights Out</span>',
+              'Three steps.<br />No sleep sacrificed.': 'Four steps.<br />Then lights out.',
+              'Tag us, use a hashtag, and your moment could land in this gallery — or earn you a stay perk.': 'Put on your mask, capture the moment, tag @staynownow with #NowNowLightsOut, and you could be featured or receive a monthly sleep perk.',
+              'title: "Wear it anywhere",  body: "In the cabin, the lounge, the cab home, or on a rooftop at 3am. Mask on. Moment ready."': 'title: "Put on your sleep mask",  body: "Your Now Now sleep mask is the official signal that sleep mode has been activated."',
+              'title: "Post & tag",        body: "Share on Instagram. Tag @staynownow and use any campaign hashtag with your post."': 'title: "Snap your lights-out moment",        body: "Capture the cabin crash, the post-NoHo wind-down, the red-eye arrival, or wherever the city finally catches up with you."',
+              'title: "Get featured",      body: "We curate the best into this gallery. Top submissions win a stay perk. Sleep tight."': 'title: "Tag and share",      body: "Tag @staynownow and use #NowNowLightsOut. Selected moments may be featured, and one featured guest receives a sleep perk each month."',
+              'Five Lights-Out Moods': 'Featured Guest Moments',
+              'Which one<br />are you?': 'Guest Sleep Mode:<br />Activated',
+              'Browse all': 'See Guest Moments',
+              'desc: "In the room. Mask on. Door closed."': 'desc: "Guests wearing the mask in their cabin."',
+              'desc: "Coming back after a night out."': 'desc: "Guests winding down after a night out."',
+              'desc: "Coffee, messy hair, zero regrets."': 'desc: "Sleep mask, coffee, messy hair, and recovery energy."',
+              'label: "Solo Sleep Club"': 'label: "Solo Traveler Sleep Club"',
+              'desc: "The whole bed, all yours."': 'desc: "Guests celebrating the freedom of traveling solo."',
+              'desc: "Landed. Checked in. Out cold."': 'desc: "Travelers checking in after flights, trains, and late-night arrivals."',
+              'Guest Gallery — {PHOTOS.length} Curated Submissions': 'Guest Sleep Mode: Activated',
+              'Lights Out,<br /><span style={{ color: TEAL }}>Moments On.</span>': 'Guest Moments,<br /><span style={{ color: TEAL }}>Sleep Mode On.</span>',
+              'Featured Submission': 'Monthly Sleep Perk',
+              '&ldquo;Technically still asleep. Masks never came off.&rdquo;': 'Each month, one featured guest moment receives a sleep perk.',
+              'Browse After NoHo': 'See Guest Moments',
+              'Submit Your Moment': 'Show Us Your Now Now Lights-Out Moment',
+              'Your moment<br />\n              <span style={{ color: BLUSH }}>belongs here.</span>': 'Your lights-out moment<br />\n              <span style={{ color: BLUSH }}>belongs here.</span>',
+              'Post on Instagram, tag{" "}\n              <span style={{ color: BLUSH }}>@staynownow</span>, then fill this form\n              so we can track your submission. We curate weekly — a stay perk might\n              find its way back to you.': 'Post a photo or Reel wearing your Now Now sleep mask, tag{" "}\n              <span style={{ color: BLUSH }}>@staynownow</span>, and use #NowNowLightsOut. Selected guest moments may be featured, and each month one featured guest receives a sleep perk.',
+              'Submission received.': 'Lights-out moment received.',
+              'We&apos;ll review your post and reach out if it makes the gallery. Sleep tight.': 'We&apos;ll review your post and reach out if it is selected for the guest gallery or monthly sleep perk.',
+              'Submit another': 'Share another moment',
+              'placeholder="What was your lights-out moment?"': 'placeholder="Tell us about your Now Now lights-out moment."',
+              'Submit My Moment': 'Share Your Lights-Out Moment',
+              'A compact hotel in the heart of NoHo, New York City. Small rooms. Big city. Stylish sleep.': 'New York gave you stories. We gave you the mask.',
+              'The city doesn&apos;t sleep. You should.': 'Tag @staynownow and use #NowNowLightsOut.',
+          }
+
+          missing = []
+          for old, new in replacements.items():
+              if old not in source:
+                  missing.append(old)
+              source = source.replace(old, new)
+
+          app_path.write_text(source, encoding="utf-8")
+
+          main_path = Path("src/main.tsx")
+          main = main_path.read_text(encoding="utf-8")
+          main = main.replace('import { installCopyOverrides } from "./apply-copy-overrides";\n', '')
+          main = main.replace('\ninstallCopyOverrides();', '')
+          main_path.write_text(main, encoding="utf-8")
+
+          workflow = Path(".github/workflows/apply-copy-direct.yml")
+          workflow.unlink()
+
+          print(f"Applied {len(replacements) - len(missing)} direct replacements.")
+          if missing:
+              print("Strings not found (review may be needed):")
+              for item in missing:
+                  print(f"- {item}")
+
+      - name: Commit direct copy changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/app/App.tsx src/main.tsx .github/workflows/apply-copy-direct.yml
+          git commit -m "Apply approved campaign copy directly" || exit 0
+          git push
