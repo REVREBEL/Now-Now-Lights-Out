@@ -1,11 +1,13 @@
 
-  # Create Campaign Landing Page
+# NOW NOW, LIGHTS OUT
 
-  This is a code bundle for Create Campaign Landing Page. The original project is available at https://www.figma.com/design/smXBMNjRQjyZkHyAL3Vuj6/Create-Campaign-Landing-Page.
+## Concept Demo Landing Pages
 
-  ## Running the code
 
-  Run `npm i` to install the dependencies.
+Now Now, Lights Out turns the hotel’s signature sleep mask into a playful guest ritual, social experience, and shoppable brand asset.
 
-  Run `npm run dev` to start the development server.
-  
+Guests are invited to post their “lights out” moment wearing the Now Now sleep mask: in bed, inside the cabin, in the lounge, after a night out in NoHo, or during a morning-after coffee reset.
+
+The campaign connects directly to Now Now NoHo’s positioning: compact rooms, strong location, stylish design, solo travel, and the idea that guests are here to experience New York — then come back and crash comfortably.
+
+
