@@ -41,6 +41,7 @@ const PEACH    = "#F9E2D3";
 const TEAL     = "#005951";
 const CREAM    = "#F5F3ED";
 const SAGE     = "#96A480";
+const LIME     = "#b4f296"
 const DARK     = "#0A0508";
 const DARK2    = "#160A10";
 
@@ -244,7 +245,7 @@ function GalleryCard({ photo }: { photo: Photo }) {
         {/* Featured badge */}
         {photo.featured && (
           <div
-            className="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-2.5 py-1.5 text-[9px] font-bold tracking-[0.2em] uppercase"
+            className="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-2.5 py-1.5 text-[9px] font-bold tracking-[0.2em]"
             style={{ background: BLUSH, color: BURGUNDY }}
           >
             <Star className="w-2.5 h-2.5 fill-current" />
@@ -253,7 +254,7 @@ function GalleryCard({ photo }: { photo: Photo }) {
         )}
         {/* Category chip */}
         <div
-          className="absolute top-3 right-3 z-10 px-2 py-1 text-[9px] tracking-[0.12em] uppercase border"
+          className="absolute top-3 right-3 z-10 px-2 py-1 text-[9px] tracking-[0.12em] rounded-full border"
           style={{
             background: "rgba(10,5,8,0.72)",
             color: SAGE,
@@ -353,7 +354,7 @@ export default function App() {
                 if (l === "Gallery") galleryRef.current?.scrollIntoView({ behavior: "smooth" });
                 if (l === "Submit")  submitRef.current?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="text-[11px] tracking-[0.18em] uppercase transition-colors"
+              className="text-[11px] tracking-[0.18em] transition-colors"
               style={{ color: SAGE, background: "none", border: "none", cursor: "pointer" }}
               onMouseEnter={e => (e.currentTarget.style.color = BLUSH)}
               onMouseLeave={e => (e.currentTarget.style.color = SAGE)}
@@ -365,7 +366,7 @@ export default function App() {
         <div className="flex items-center gap-3">
           <a
             href="#"
-            className="hidden md:flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase px-4 py-2 transition-all"
+            className="hidden md:flex items-center gap-2 text-[11px] tracking-[0.15em] px-4 py-2 transition-all"
             style={{ color: PEACH, border: `1px solid rgba(249,226,211,0.3)` }}
             onMouseEnter={e => { const el = e.currentTarget; el.style.background = PEACH; el.style.color = BURGUNDY; }}
             onMouseLeave={e => { const el = e.currentTarget; el.style.background = "transparent"; el.style.color = PEACH; }}
@@ -375,7 +376,7 @@ export default function App() {
           </a>
           <button
             onClick={() => submitRef.current?.scrollIntoView({ behavior: "smooth" })}
-            className="text-[11px] tracking-[0.15em] uppercase px-4 py-2 font-bold transition-all"
+            className="text-[11px] tracking-[0.15em] px-4 py-2 font-bold transition-all"
             style={{ background: BLUSH, color: BURGUNDY }}
             onMouseEnter={e => { const el = e.currentTarget; el.style.background = BURGUNDY; el.style.color = BLUSH; }}
             onMouseLeave={e => { const el = e.currentTarget; el.style.background = BLUSH; el.style.color = BURGUNDY; }}
@@ -399,7 +400,7 @@ export default function App() {
 
           {/* Left — copy */}
           <div className="flex flex-col justify-end px-6 md:px-12 lg:px-16 pb-16 pt-16 md:pt-0">
-            <p className="text-[10px] tracking-[0.45em] uppercase mb-6" style={{ color: SAGE, fontFamily: "monospace" }}>
+            <p className="text-[10px] tracking-[0.45em] mb-6" style={{ color: SAGE, fontFamily: "monospace" }}>
               NOW NOW, LIGHTS OUT
             </p>
             <h1
@@ -428,7 +429,7 @@ export default function App() {
             <div className="flex flex-wrap gap-3 mb-10">
               <button
                 onClick={() => galleryRef.current?.scrollIntoView({ behavior: "smooth" })}
-                className="group flex items-center gap-3 px-7 py-4 text-sm font-bold tracking-[0.15em] uppercase transition-all duration-300"
+                className="group flex items-center gap-3 px-7 py-4 text-sm font-bold tracking-[0.15em] transition-all duration-300"
                 style={{ background: BLUSH, color: BURGUNDY }}
                 onMouseEnter={e => { const el = e.currentTarget; el.style.background = BURGUNDY; el.style.color = BLUSH; }}
                 onMouseLeave={e => { const el = e.currentTarget; el.style.background = BLUSH; el.style.color = BURGUNDY; }}
@@ -438,7 +439,7 @@ export default function App() {
               </button>
               <a
                 href="#"
-                className="flex items-center gap-3 px-7 py-4 text-sm tracking-[0.15em] uppercase transition-all"
+                className="flex items-center gap-3 px-7 py-4 text-sm tracking-[0.15em] transition-all"
                 style={{ border: `1px solid rgba(249,226,211,0.25)`, color: PEACH }}
                 onMouseEnter={e => (e.currentTarget.style.borderColor = PEACH)}
                 onMouseLeave={e => (e.currentTarget.style.borderColor = "rgba(249,226,211,0.25)")}
@@ -480,7 +481,7 @@ export default function App() {
               style={{ background: "rgba(10,5,8,0.85)", borderColor: `${BLUSH}33`, backdropFilter: "blur(8px)" }}
             >
               <div style={{ ...displaySx, fontSize: "2rem", color: BLUSH, lineHeight: 1 }}>1,196</div>
-              <div className="text-[9px] tracking-[0.2em] uppercase mt-0.5" style={{ color: SAGE }}>Submissions</div>
+              <div className="text-[9px] tracking-[0.2em] mt-0.5" style={{ color: SAGE }}>Submissions</div>
             </div>
           </div>
         </div>
@@ -510,9 +511,9 @@ export default function App() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <span className="text-[10px] tracking-[0.4em] uppercase block mb-3" style={{ color: `${BURGUNDY}88` }}>How to Go Lights Out</span>
+              <span className="text-[10px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88` }}>How to Go Lights Out</span>
               <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BURGUNDY, lineHeight: 0.9 }}>
-                Four steps.<br />Then lights out.
+                Four Steps.<br />Then Lights Out.
               </h2>
             </div>
             <p className="text-sm leading-relaxed max-w-xs" style={{ color: `${BURGUNDY}99`, fontWeight: 300 }}>
@@ -542,15 +543,15 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
             <div>
-              <span className="text-[10px] tracking-[0.4em] uppercase block mb-3" style={{ color: `${BURGUNDY}88` }}>Featured Guest Moments</span>
+              <span className="text-[10px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88` }}>Featured Guest Moments</span>
               <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BURGUNDY, lineHeight: 0.9 }}>
                 Guest Sleep Mode:<br />Activated
               </h2>
             </div>
             <button
               onClick={() => galleryRef.current?.scrollIntoView({ behavior: "smooth" })}
-              className="self-start md:self-end flex items-center gap-2 text-sm tracking-[0.15em] uppercase transition-colors"
-              style={{ color: BURGUNDY, background: "none", border: "none", cursor: "pointer" }}
+              className="self-start md:self-end flex items-center gap-2 uppercase font-body text-sm tracking-[0.15em] transition-colors"
+              style={{ color: BURGUNDY, background: "none", border: "none",  cursor: "pointer" }}
             >
               See Guest Moments <ArrowRight className="w-4 h-4" />
             </button>
@@ -577,7 +578,7 @@ export default function App() {
                     />
                     <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,5,8,0.75) 0%, transparent 55%)" }} />
                     <div className="absolute bottom-3 left-3">
-                      <span className="text-[10px] tracking-[0.2em] uppercase px-2 py-1" style={{ background: BLUSH, color: BURGUNDY, fontWeight: 700 }}>
+                      <span className="text-[10px] tracking-[0.2em] rounded-full px-2 py-1" style={{ background: BLUSH, color: BURGUNDY, fontWeight: 700 }}>
                         {meta.count} posts
                       </span>
                     </div>
@@ -599,23 +600,23 @@ export default function App() {
       <section
         ref={galleryRef as React.RefObject<HTMLElement>}
         id="gallery"
-        style={{ background: CREAM }}
+        style={{ background: PEACH }}
         className="py-24 px-6 md:px-12 lg:px-20"
       >
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <span className="text-[10px] tracking-[0.4em] uppercase block mb-3" style={{ color: `${BURGUNDY}88`, fontFamily: "monospace" }}>
+              <span className="text-[10px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88`, fontFamily: "monospace" }}>
                 Guest Sleep Mode: Activated
               </span>
               <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BURGUNDY, lineHeight: 0.9 }}>
-                Guest Moments,<br /><span style={{ color: TEAL }}>Sleep Mode On.</span>
+                Guest Moments,<br /><span style={{ color: BLUSH }}>Sleep Mode On.</span>
               </h2>
             </div>
             <div className="flex items-center gap-2" style={{ color: SAGE }}>
               <Instagram className="w-3.5 h-3.5" />
-              <span className="text-xs tracking-[0.18em] uppercase">@staynownow</span>
+              <span className="text-xs tracking-[0.18em]">@staynownow</span>
             </div>
           </div>
 
@@ -627,7 +628,7 @@ export default function App() {
                 <button
                   key={tab.key}
                   onClick={() => setActiveCat(tab.key)}
-                  className="text-[11px] tracking-[0.15em] uppercase px-4 py-2.5 border transition-all duration-200"
+                  className="text-[11px] tracking-[0.15em] px-4 py-2.5 border transition-all duration-200"
                   style={{
                     background:   active ? BURGUNDY : "transparent",
                     color:        active ? BLUSH    : `${BURGUNDY}77`,
@@ -665,18 +666,19 @@ export default function App() {
               <img src={spotImg} alt="Featured — group with Now Now sleep masks" className="w-full h-full object-cover object-top" />
             </div>
             <div
-              className="absolute -bottom-4 -right-4 px-4 py-3 flex items-center gap-3"
-              style={{ background: BLUSH }}
+              className="absolute -bottom-4 -right-4 px-4 py-3 rounded-full flex items-center gap-3"
+              style={{ background: LIME }}
             >
-              <Star className="w-4 h-4 fill-current" style={{ color: BURGUNDY }} />
-              <span className="text-[11px] tracking-[0.2em] uppercase font-bold" style={{ color: BURGUNDY }}>Editor&apos;s Pick</span>
+              
+              <Star className="w-4 h-4 fill-current" style={{ color: TEAL }} />
+              <span className="text-[11px] tracking-[0.2em] font-display font-bold" style={{ color: TEAL }}>Editor&apos;s Pick</span>
             </div>
           </div>
 
           {/* Text */}
           <div>
-            <span className="text-[10px] tracking-[0.4em] uppercase block mb-6" style={{ color: `${PEACH}88` }}>Monthly Sleep Perk</span>
-            <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4.5rem)", color: PEACH, lineHeight: 0.88, marginBottom: "1.5rem" }}>
+            <span className="text-[10px] tracking-[0.4em] block mb-6" style={{ color: `${LIME}88` }}>Monthly Sleep Perk</span>
+            <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4.5rem)", color: LIME, lineHeight: 0.88, marginBottom: "1.5rem" }}>
               Each month, one featured guest moment receives a sleep perk.
             </h2>
             <div
@@ -687,27 +689,27 @@ export default function App() {
                 <img src={spotImg} alt="" className="w-full h-full object-cover object-top" />
               </div>
               <div>
-                <p className="text-sm font-medium" style={{ color: BLUSH }}>@nownow.squad</p>
+                <p className="text-sm font-medium" style={{ color: LIME }}>@nownow.squad</p>
                 <p className="text-[10px] tracking-wide" style={{ color: `${PEACH}77` }}>After NoHo</p>
               </div>
               <div className="flex items-center gap-4 ml-auto">
-                <span className="flex items-center gap-1.5 text-[12px]" style={{ color: `${PEACH}88` }}>
+                <span className="flex items-center gap-1.5 text-[12px]" style={{ color: `${LIME}88` }}>
                   <Heart className="w-3.5 h-3.5" />3.8k
                 </span>
-                <span className="flex items-center gap-1.5 text-[12px]" style={{ color: `${PEACH}88` }}>
+                <span className="flex items-center gap-1.5 text-[12px]" style={{ color: `${LIME}88` }}>
                   <MessageCircle className="w-3.5 h-3.5" />241
                 </span>
               </div>
             </div>
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap  gap-2 mb-8">
               {["#NowNowLightsOut", "#AfterNoHo", "#NoHoDreamMode"].map(t => (
-                <span key={t} className="px-3 py-1.5 text-xs tracking-wide border" style={{ color: BLUSH, borderColor: `${BLUSH}44` }}>{t}</span>
+                <span key={t} className="px-3 py-1.5 font-displayr rounded-full text-xs tracking-wide border" style={{ color: LIME, borderColor: `${LIME}44` }}>{t}</span>
               ))}
             </div>
             <button
               onClick={() => { setActiveCat("noho"); galleryRef.current?.scrollIntoView({ behavior: "smooth" }); }}
-              className="flex items-center gap-2 text-sm tracking-[0.15em] uppercase font-bold transition-opacity"
-              style={{ color: BLUSH, background: "none", border: "none", cursor: "pointer" }}
+              className="flex items-center gap-2 text-sm tracking-[0.15em] font-bold transition-opacity"
+              style={{ color: LIME, background: "none", border: "none", cursor: "pointer" }}
               onMouseEnter={e => (e.currentTarget.style.opacity = "0.7")}
               onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
             >
@@ -740,14 +742,14 @@ export default function App() {
                 </span>
               </div>
             </div>
-            <span className="text-[10px] tracking-[0.4em] uppercase block mb-5" style={{ color: SAGE }}>Show Us Your Now Now Lights-Out Moment</span>
+            <span className="text-[10px] tracking-[0.4em] block mb-5" style={{ color: SAGE }}>Show Us Your Now Now Lights-Out Moment</span>
             <h2 style={{ ...displaySx, fontSize: "clamp(3rem,7vw,5.5rem)", color: PEACH, lineHeight: 0.88, marginBottom: "1.5rem" }}>
               Your lights-out moment<br />
               <span style={{ color: BLUSH }}>belongs here.</span>
             </h2>
             <p className="text-sm leading-relaxed mb-8 max-w-sm" style={{ color: `${PEACH}77`, fontWeight: 300 }}>
-              Post a photo or Reel wearing your Now Now sleep mask, tag{" "}
-              <span style={{ color: BLUSH }}>@staynownow</span>, and use #NowNowLightsOut. Selected guest moments may be featured, and each month one featured guest receives a sleep perk.
+              Post a Photo or Reel wearing your Now Now Sleep Mask, Tag{" "}
+              <span style={{ color: BLUSH }}>@staynownow</span>, and use #NowNowLightsOut. Selected Guest Moments may be Featured, and Each Month One Featured Guest Receives a Sleep Perk.
             </p>
             <div className="flex items-center gap-3 text-sm mb-6" style={{ color: SAGE }}>
               <Instagram className="w-4 h-4 flex-shrink-0" />
@@ -778,7 +780,7 @@ export default function App() {
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ name: "", handle: "", category: "", caption: "" }); }}
-                  className="text-[11px] tracking-[0.18em] uppercase px-5 py-3 border transition-colors"
+                  className="text-[11px] tracking-[0.18em] px-5 py-3 border transition-colors"
                   style={{ borderColor: `${BLUSH}33`, color: BLUSH, background: "none", cursor: "pointer" }}
                 >
                   Share another moment
@@ -797,7 +799,7 @@ export default function App() {
                   <Camera className="w-8 h-8" style={{ color: `${BLUSH}66` }} />
                   <p className="text-sm" style={{ color: `${PEACH}66` }}>Drag your photo here</p>
                   <span
-                    className="text-[11px] tracking-[0.15em] uppercase px-4 py-2 border"
+                    className="text-[11px] tracking-[0.15em] px-4 py-2 border"
                     style={{ color: BLUSH, borderColor: `${BLUSH}44`, cursor: "pointer" }}
                   >
                     Browse
@@ -807,7 +809,7 @@ export default function App() {
 
                 {/* Name */}
                 <div>
-                  <label className="block text-[10px] tracking-[0.25em] uppercase mb-2" style={{ color: SAGE }}>
+                  <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
                     Your Name
                   </label>
                   <input
@@ -825,7 +827,7 @@ export default function App() {
 
                 {/* Instagram handle */}
                 <div>
-                  <label className="block text-[10px] tracking-[0.25em] uppercase mb-2" style={{ color: SAGE }}>
+                  <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
                     Instagram Handle
                   </label>
                   <div className="relative">
@@ -846,7 +848,7 @@ export default function App() {
 
                 {/* Category */}
                 <div>
-                  <label className="block text-[10px] tracking-[0.25em] uppercase mb-2" style={{ color: SAGE }}>
+                  <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
                     Category
                   </label>
                   <select
@@ -873,7 +875,7 @@ export default function App() {
 
                 {/* Caption */}
                 <div>
-                  <label className="block text-[10px] tracking-[0.25em] uppercase mb-2" style={{ color: SAGE }}>
+                  <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
                     Caption <span style={{ color: `${SAGE}66` }}>(optional)</span>
                   </label>
                   <textarea
@@ -890,7 +892,7 @@ export default function App() {
 
                 <button
                   type="submit"
-                  className="flex items-center justify-center gap-3 py-4 text-sm font-bold tracking-[0.18em] uppercase transition-all"
+                  className="flex items-center justify-center gap-3 py-4 text-sm font-bold tracking-[0.18em] transition-all"
                   style={{ background: BLUSH, color: BURGUNDY }}
                   onMouseEnter={e => { const el = e.currentTarget; el.style.background = BURGUNDY; el.style.color = BLUSH; }}
                   onMouseLeave={e => { const el = e.currentTarget; el.style.background = BLUSH; el.style.color = BURGUNDY; }}
@@ -920,13 +922,13 @@ export default function App() {
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <span className="text-[10px] tracking-[0.3em] uppercase mb-1" style={{ color: SAGE }}>Campaign Tags</span>
+              <span className="text-[10px] tracking-[0.3em] mb-1" style={{ color: SAGE }}>Campaign Tags</span>
               {HASHTAGS.map(h => (
                 <span key={h} className="text-[11px] tracking-wide" style={{ color: `${PEACH}66` }}>{h}</span>
               ))}
             </div>
             <div className="flex flex-col gap-3">
-              <span className="text-[10px] tracking-[0.3em] uppercase mb-1" style={{ color: SAGE }}>Links</span>
+              <span className="text-[10px] tracking-[0.3em] mb-1" style={{ color: SAGE }}>Links</span>
               {["staynownow.com", "Shop the Sleep Kit", "Book a Stay", "Instagram"].map(l => (
                 <a
                   key={l}
@@ -942,7 +944,7 @@ export default function App() {
             </div>
           </div>
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-[10px] tracking-[0.2em] uppercase" style={{ color: `${PEACH}44` }}>
+            <p className="text-[10px] tracking-[0.2em]" style={{ color: `${PEACH}44` }}>
               © 2024 Now Now NoHo · New York City · NoHo
             </p>
             <p className="text-[10px] tracking-[0.2em]" style={{ color: `${PEACH}33` }}>
