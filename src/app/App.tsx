@@ -514,12 +514,12 @@ export default function App() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <span className="text-[12px] tracking-[0.4em] font-normal block mb-3" style={{ color: `${BURGUNDY}88` }}>How to Go Lights Out</span>
+              <span className="text-[12px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88`, fontWeight: 400 }}>How to Go Lights Out</span>
               <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BURGUNDY, lineHeight: 0.9 }}>
                 Four Steps.<br />Then Lights Out.
               </h2>
             </div>
-            <p className="text-sm leading-relaxed max-w-xs" style={{ color: `${BURGUNDY}99`, fontWeight: 300 }}>
+            <p className="text-sm leading-relaxed max-w-xs" style={{ color: `${BURGUNDY}99`, fontWeight: 400 }}>
               Put on your mask, capture the moment, tag @staynownow with #NowNowLightsOut, and you could be featured or receive a monthly sleep perk.
             </p>
           </div>
@@ -610,11 +610,11 @@ export default function App() {
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <span className="text-[12px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88`, fontFamily: "monospace" }}>
+              <span className="text-[12px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88`, fontFamily: "monospace", fontWeight: 500 }}>
                 Guest Sleep Mode: Activated
               </span>
               <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BURGUNDY, lineHeight: 0.9 }}>
-                Guest Moments,<br /><span style={{ color: PINK }}>Sleep Mode On.</span>
+                Guest Moments,<br /><span style={{ color: BURGUNDY }}>Sleep Mode On.</span>
               </h2>
             </div>
             <div className="flex items-center gap-2" style={{ color: SAGE }}>
@@ -750,7 +750,7 @@ export default function App() {
                 Your lights-out moment<br />
                 <span style={{ color: BLUSH }}>belongs here.</span>
               </h2>
-              <p className="text-regular leading-relaxed mb-8 max-w-sm" style={{ color: `${BLUSH}`, fontWeight: 300 }}>
+              <p className="text-regular leading-relaxed mb-8 max-w-sm" style={{ color: `${BLUSH}`, fontWeight: 400 }}>
                 Post a Photo or Reel wearing your Now Now Sleep Mask, Tag{" "}
                 <span style={{ color: PEACH }}>@staynownow</span>, and use #NowNowLightsOut. Selected Guest Moments may be Featured, and Each Month One Featured Guest Receives a Sleep Perk.
               </p>
@@ -920,7 +920,7 @@ export default function App() {
                 <Moon className="w-3.5 h-3.5" style={{ color: BLUSH }} />
                 <span style={{ ...displaySx, fontSize: "1rem", letterSpacing: "0.26em", color: PEACH, fontStyle: "normal" }}>NOW NOW NOHO</span>
               </div>
-              <p className="text-xs leading-relaxed" style={{ color: `${PEACH}55`, fontWeight: 300 }}>
+              <p className="text-xs leading-relaxed" style={{ color: `${PEACH}55`, fontWeight: 400 }}>
                 New York gave you stories. We gave you the mask.
               </p>
             </div>
