@@ -413,7 +413,7 @@ export default function App() {
               <span style={{ color: BLUSH }}>Doesn&apos;t</span><br />
               Sleep.
             </h1>
-            <h2
+            <h2>
               style={{
                 ...displaySx,
                 fontSize: "clamp(5rem,13vw,12rem)",
@@ -423,7 +423,6 @@ export default function App() {
                 WebkitTextStroke: `2px ${BLUSH}`,
                 marginBottom: "2.5rem",
               }}
-            >
               You Should.
             </h2>
             <p className="text-base leading-relaxed mb-10 max-w-md" style={{ color: `${PEACH}99`, fontWeight: 300 }}>
@@ -745,168 +744,170 @@ export default function App() {
                 </span>
               </div>
             </div>
-            <span className="text-[12px] tracking-[0.4em] block mb-5" style={{ color: SAGE }}>Show Us Your Now Now Lights-Out Moment</span>
-            <h2 style={{ ...displaySx, fontSize: "clamp(3rem,7vw,5.5rem)", color: PEACH, lineHeight: 0.88, marginBottom: "1.5rem" }}>
-              Your lights-out moment<br />
-              <span style={{ color: BLUSH }}>belongs here.</span>
-            </h2>
-            <p className="text-regular leading-relaxed mb-8 max-w-sm" style={{ color: `${BLUSH}`, fontWeight: 300 }}>
-              Post a Photo or Reel wearing your Now Now Sleep Mask, Tag{" "}
-              <span style={{ color: PEACH }}>@staynownow</span>, and use #NowNowLightsOut. Selected Guest Moments may be Featured, and Each Month One Featured Guest Receives a Sleep Perk.
-            </p>
-            <div className="flex items-center gap-3 text-sm mb-6" style={{ color: PEACH }}>
-              <Instagram className="w-4 h-4 flex-shrink-0" />
-              <span className="tracking-[0.12em]">@staynownow</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {HASHTAGS.map(h => (
-                <span key={h} className="text-[12px] px-2.5 py-1.5 border tracking-wide" style={{ color: BLUSH, borderColor: `${BLUSH}22` }}>{h}</span>
-              ))}
-            </div>
-          </div>
-
-          {/* Right — form */}
-          <div className="border" style={{ borderColor: `${BLUSH}18` }}>
-            {submitted ? (
-              <div className="p-10 text-center">
-                <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
-                  style={{ background: `${TEAL}33`, border: `1px solid ${TEAL}` }}
-                >
-                  <Check className="w-7 h-7" style={{ color: TEAL }} />
-                </div>
-                <h3 style={{ ...displaySx, fontSize: "2rem", color: PEACH, marginBottom: "0.75rem", fontStyle: "normal" }}>
-                  Lights-out moment received.
-                </h3>
-                <p className="text-sm leading-relaxed mb-8" style={{ color: `${PEACH}77` }}>
-                  We&apos;ll review your post and reach out if it is selected for the guest gallery or monthly sleep perk.
-                </p>
-                <button
-                  onClick={() => { setSubmitted(false); setForm({ name: "", handle: "", category: "", caption: "" }); }}
-                  className="text-[11px] tracking-[0.18em] px-5 py-3 border transition-colors"
-                  style={{ borderColor: `${BLUSH}33`, color: BLUSH, background: "none", cursor: "pointer" }}
-                >
-                  Share another moment
-                </button>
+            <span className="text-[10px] tracking-[0.4em] block mb-5" style={{ color: PINK }}>Show Us Your Now Now Lights-Out Moment</span>
+            <h2 style={{ ...displaySx, fontSize: "clamp(3rem,7vw,5.5rem)", color: BLUSH, lineHeight: 0.88, marginBottom: "1.5rem" }}>
+              <span className="text-[12px] tracking-[0.4em] block mb-5" style={{ color: SAGE }}>Show Us Your Now Now Lights-Out Moment</span>
+              <h2 style={{ ...displaySx, fontSize: "clamp(3rem,7vw,5.5rem)", color: PEACH, lineHeight: 0.88, marginBottom: "1.5rem" }}>
+                Your lights-out moment<br />
+                <span style={{ color: BLUSH }}>belongs here.</span>
+              </h2>
+              <p className="text-regular leading-relaxed mb-8 max-w-sm" style={{ color: `${BLUSH}`, fontWeight: 300 }}>
+                Post a Photo or Reel wearing your Now Now Sleep Mask, Tag{" "}
+                <span style={{ color: PEACH }}>@staynownow</span>, and use #NowNowLightsOut. Selected Guest Moments may be Featured, and Each Month One Featured Guest Receives a Sleep Perk.
+              </p>
+              <div className="flex items-center gap-3 text-sm mb-6" style={{ color: PEACH }}>
+                <Instagram className="w-4 h-4 flex-shrink-0" />
+                <span className="tracking-[0.12em]">@staynownow</span>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="p-8 flex flex-col gap-5">
+              <div className="flex flex-wrap gap-2">
+                {HASHTAGS.map(h => (
+                  <span key={h} className="text-[12px] px-2.5 py-1.5 border tracking-wide" style={{ color: BLUSH, borderColor: `${BLUSH}22` }}>{h}</span>
+                ))}
+              </div>
 
-                {/* Photo upload */}
-                <div
-                  className="flex flex-col items-center justify-center gap-3 py-10 border-2 border-dashed cursor-pointer transition-colors"
-                  style={{ borderColor: `${BLUSH}30` }}
-                  onMouseEnter={e => (e.currentTarget.style.borderColor = `${BLUSH}60`)}
-                  onMouseLeave={e => (e.currentTarget.style.borderColor = `${BLUSH}30`)}
-                >
-                  <Camera className="w-8 h-8" style={{ color: `${BLUSH}66` }} />
-                  <p className="text-sm" style={{ color: `${PEACH}66` }}>Drag your photo here</p>
-                  <span
-                    className="text-[11px] tracking-[0.15em] px-4 py-2 border"
-                    style={{ color: BLUSH, borderColor: `${BLUSH}44`, cursor: "pointer" }}
-                  >
-                    Browse
-                  </span>
-                  <p className="text-[10px]" style={{ color: `${PEACH}44` }}>JPG or PNG · up to 20MB</p>
-                </div>
 
-                {/* Name */}
-                <div>
-                  <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Paloma Wanders"
-                    value={form.name}
-                    onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                    className="w-full px-4 py-3 text-sm outline-none border transition-colors"
-                    style={{ background: DARK2, color: PEACH, borderColor: `${BLUSH}22`, fontFamily: '"DM Sans", sans-serif' }}
-                    onFocus={e => (e.target.style.borderColor = `${BLUSH}55`)}
-                    onBlur={e => (e.target.style.borderColor = `${BLUSH}22`)}
-                  />
-                </div>
-
-                {/* Instagram handle */}
-                <div>
-                  <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
-                    Instagram Handle
-                  </label>
-                  <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm select-none" style={{ color: SAGE }}>@</span>
-                    <input
-                      type="text"
-                      required
-                      placeholder="paloma.wanders"
-                      value={form.handle}
-                      onChange={e => setForm(f => ({ ...f, handle: e.target.value }))}
-                      className="w-full pl-9 pr-4 py-3 text-sm outline-none border transition-colors"
-                      style={{ background: DARK2, color: PEACH, borderColor: `${BLUSH}22`, fontFamily: '"DM Sans", sans-serif' }}
-                      onFocus={e => (e.target.style.borderColor = `${BLUSH}55`)}
-                      onBlur={e => (e.target.style.borderColor = `${BLUSH}22`)}
-                    />
+              {/* Right — form */}
+              <div className="border" style={{ borderColor: `${BLUSH}18` }}>
+                {submitted ? (
+                  <div className="p-10 text-center">
+                    <div
+                      className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                      style={{ background: `${TEAL}33`, border: `1px solid ${TEAL}` }}
+                    >
+                      <Check className="w-7 h-7" style={{ color: TEAL }} />
+                    </div>
+                    <h3 style={{ ...displaySx, fontSize: "2rem", color: PEACH, marginBottom: "0.75rem", fontStyle: "normal" }}>
+                      Lights-out moment received.
+                    </h3>
+                    <p className="text-sm leading-relaxed mb-8" style={{ color: `${PEACH}77` }}>
+                      We&apos;ll review your post and reach out if it is selected for the guest gallery or monthly sleep perk.
+                    </p>
+                    <button
+                      onClick={() => { setSubmitted(false); setForm({ name: "", handle: "", category: "", caption: "" }); }}
+                      className="text-[11px] tracking-[0.18em] px-5 py-3 border transition-colors"
+                      style={{ borderColor: `${BLUSH}33`, color: BLUSH, background: "none", cursor: "pointer" }}
+                    >
+                      Share another moment
+                    </button>
                   </div>
-                </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="p-8 flex flex-col gap-5">
 
-                {/* Category */}
-                <div>
-                  <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
-                    Category
-                  </label>
-                  <select
-                    required
-                    value={form.category}
-                    onChange={e => setForm(f => ({ ...f, category: e.target.value }))}
-                    className="w-full px-4 py-3 text-sm outline-none border transition-colors appearance-none"
-                    style={{
-                      background: DARK2,
-                      color: form.category ? PEACH : `${PEACH}55`,
-                      borderColor: `${BLUSH}22`,
-                      fontFamily: '"DM Sans", sans-serif',
-                      cursor: "pointer",
-                    }}
-                    onFocus={e => (e.target.style.borderColor = `${BLUSH}55`)}
-                    onBlur={e => (e.target.style.borderColor = `${BLUSH}22`)}
-                  >
-                    <option value="" disabled>Select your category</option>
-                    {(Object.keys(CAT_META) as Exclude<Cat, "all">[]).map(k => (
-                      <option key={k} value={k}>{CAT_META[k].label}</option>
-                    ))}
-                  </select>
-                </div>
+                    {/* Photo upload */}
+                    <div
+                      className="flex flex-col items-center justify-center gap-3 py-10 border-2 border-dashed cursor-pointer transition-colors"
+                      style={{ borderColor: `${BLUSH}30` }}
+                      onMouseEnter={e => (e.currentTarget.style.borderColor = `${BLUSH}60`)}
+                      onMouseLeave={e => (e.currentTarget.style.borderColor = `${BLUSH}30`)}
+                    >
+                      <Camera className="w-8 h-8" style={{ color: `${BLUSH}66` }} />
+                      <p className="text-sm" style={{ color: `${PEACH}66` }}>Drag your photo here</p>
+                      <span
+                        className="text-[11px] tracking-[0.15em] px-4 py-2 border"
+                        style={{ color: BLUSH, borderColor: `${BLUSH}44`, cursor: "pointer" }}
+                      >
+                        Browse
+                      </span>
+                      <p className="text-[10px]" style={{ color: `${PEACH}44` }}>JPG or PNG · up to 20MB</p>
+                    </div>
 
-                {/* Caption */}
-                <div>
-                  <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
-                    Caption <span style={{ color: `${SAGE}66` }}>(optional)</span>
-                  </label>
-                  <textarea
-                    rows={3}
-                    placeholder="Tell us about your Now Now lights-out moment."
-                    value={form.caption}
-                    onChange={e => setForm(f => ({ ...f, caption: e.target.value }))}
-                    className="w-full px-4 py-3 text-sm outline-none border transition-colors resize-none"
-                    style={{ background: DARK2, color: PEACH, borderColor: `${BLUSH}22`, fontFamily: '"DM Sans", sans-serif' }}
-                    onFocus={e => (e.target.style.borderColor = `${BLUSH}55`)}
-                    onBlur={e => (e.target.style.borderColor = `${BLUSH}22`)}
-                  />
-                </div>
+                    {/* Name */}
+                    <div>
+                      <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
+                        Your Name
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Paloma Wanders"
+                        value={form.name}
+                        onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                        className="w-full px-4 py-3 text-sm outline-none border transition-colors"
+                        style={{ background: DARK2, color: PEACH, borderColor: `${BLUSH}22`, fontFamily: '"DM Sans", sans-serif' }}
+                        onFocus={e => (e.target.style.borderColor = `${BLUSH}55`)}
+                        onBlur={e => (e.target.style.borderColor = `${BLUSH}22`)}
+                      />
+                    </div>
 
-                <button
-                  type="submit"
-                  className="flex items-center justify-center gap-3 py-4 text-sm font-bold tracking-[0.18em] transition-all"
-                  style={{ background: BLUSH, color: BURGUNDY }}
-                  onMouseEnter={e => { const el = e.currentTarget; el.style.background = BURGUNDY; el.style.color = BLUSH; }}
-                  onMouseLeave={e => { const el = e.currentTarget; el.style.background = BLUSH; el.style.color = BURGUNDY; }}
-                >
-                  <Send className="w-4 h-4" />
-                  Share Your Lights-Out Moment
-                </button>
-              </form>
-            )}
+                    {/* Instagram handle */}
+                    <div>
+                      <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
+                        Instagram Handle
+                      </label>
+                      <div className="relative">
+                        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm select-none" style={{ color: SAGE }}>@</span>
+                        <input
+                          type="text"
+                          required
+                          placeholder="paloma.wanders"
+                          value={form.handle}
+                          onChange={e => setForm(f => ({ ...f, handle: e.target.value }))}
+                          className="w-full pl-9 pr-4 py-3 text-sm outline-none border transition-colors"
+                          style={{ background: DARK2, color: PEACH, borderColor: `${BLUSH}22`, fontFamily: '"DM Sans", sans-serif' }}
+                          onFocus={e => (e.target.style.borderColor = `${BLUSH}55`)}
+                          onBlur={e => (e.target.style.borderColor = `${BLUSH}22`)}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Category */}
+                    <div>
+                      <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
+                        Category
+                      </label>
+                      <select
+                        required
+                        value={form.category}
+                        onChange={e => setForm(f => ({ ...f, category: e.target.value }))}
+                        className="w-full px-4 py-3 text-sm outline-none border transition-colors appearance-none"
+                        style={{
+                          background: DARK2,
+                          color: form.category ? PEACH : `${PEACH}55`,
+                          borderColor: `${BLUSH}22`,
+                          fontFamily: '"DM Sans", sans-serif',
+                          cursor: "pointer",
+                        }}
+                        onFocus={e => (e.target.style.borderColor = `${BLUSH}55`)}
+                        onBlur={e => (e.target.style.borderColor = `${BLUSH}22`)}
+                      >
+                        <option value="" disabled>Select your category</option>
+                        {(Object.keys(CAT_META) as Exclude<Cat, "all">[]).map(k => (
+                          <option key={k} value={k}>{CAT_META[k].label}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    {/* Caption */}
+                    <div>
+                      <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
+                        Caption <span style={{ color: `${SAGE}66` }}>(optional)</span>
+                      </label>
+                      <textarea
+                        rows={3}
+                        placeholder="Tell us about your Now Now lights-out moment."
+                        value={form.caption}
+                        onChange={e => setForm(f => ({ ...f, caption: e.target.value }))}
+                        className="w-full px-4 py-3 text-sm outline-none border transition-colors resize-none"
+                        style={{ background: DARK2, color: PEACH, borderColor: `${BLUSH}22`, fontFamily: '"DM Sans", sans-serif' }}
+                        onFocus={e => (e.target.style.borderColor = `${BLUSH}55`)}
+                        onBlur={e => (e.target.style.borderColor = `${BLUSH}22`)}
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="flex items-center justify-center gap-3 py-4 text-sm font-bold tracking-[0.18em] transition-all"
+                      style={{ background: BLUSH, color: BURGUNDY }}
+                      onMouseEnter={e => { const el = e.currentTarget; el.style.background = BURGUNDY; el.style.color = BLUSH; }}
+                      onMouseLeave={e => { const el = e.currentTarget; el.style.background = BLUSH; el.style.color = BURGUNDY; }}
+                    >
+                      <Send className="w-4 h-4" />
+                      Share Your Lights-Out Moment
+                    </button>
+                  </form>
+                )}
+              </div>
           </div>
-        </div>
       </section>
 
       {/* ════════════════════════════════════════════════════════════════════ */}
