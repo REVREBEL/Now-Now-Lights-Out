@@ -514,7 +514,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <span className="text-[12px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88` }}>How to Go Lights Out</span>
+              <span className="text-[12px] tracking-[0.4em] font-normal block mb-3" style={{ color: `${BURGUNDY}88` }}>How to Go Lights Out</span>
               <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BURGUNDY, lineHeight: 0.9 }}>
                 Four Steps.<br />Then Lights Out.
               </h2>
