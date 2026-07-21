@@ -209,7 +209,7 @@ const HASHTAGS = [
 const displaySx = {
   fontFamily: '"Ginestra", "Syne", "Archivo Black", Impact, "Arial Black", sans-serif',
   fontStyle: "normal" as const,
-  fontWeight: 900,
+  fontWeight: 800,
 };
 const bodySx = { fontFamily: '"Saans", sans-serif' };
 
