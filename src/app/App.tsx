@@ -530,9 +530,9 @@ export default function App() {
               { n: "03", title: "Tag and share", body: "Tag @staynownow and use #NowNowLightsOut. Selected moments may be featured, and one featured guest receives a sleep perk each month." },
             ].map(step => (
               <div key={step.n} className="p-10" style={{ background: PEACH }}>
-                <div style={{ ...displaySx, fontSize: "4.5rem", color: `${BLUSH}22`, lineHeight: 1, marginBottom: "1.5rem" }}>{step.n}</div>
+                <div style={{ ...displaySx, fontSize: "4.5rem", color: `${BURGUNDY}CC`, lineHeight: 1, marginBottom: "1.5rem" }}>{step.n}</div>
                 <h3 style={{ ...displaySx, fontSize: "1.75rem", color: BURGUNDY, marginBottom: "0.75rem", lineHeight: 1.1, fontStyle: "normal" }}>{step.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: `${BLUSH}88`, fontWeight: 300 }}>{step.body}</p>
+                <p className="text-sm leading-relaxed" style={{ color: `${BURGUNDY}CC`, fontWeight: 400 }}>{step.body}</p>
               </div>
             ))}
           </div>
