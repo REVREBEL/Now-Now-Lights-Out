@@ -396,7 +396,7 @@ export default function App() {
         {/* Ambient glow */}
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: `radial-gradient(ellipse 70% 60% at 15% 60%, rgba(104,18,56,0.2) 0%, transparent 65%), radial-gradient(ellipse 50% 40% at 85% 30%, rgba(0,89,81,0.1) 0%, transparent 65%)` }}
+          style={{ background: `radial-gradient(ellipse 70% 60% at 15% 60%, rgb(104, 18, 56) 0%, transparent 65%), radial-gradient(ellipse 50% 40% at 85% 30%, rgba(0,89,81,0.1) 0%, transparent 65%)` }}
         />
 
         <div className="relative z-10 w-full grid md:grid-cols-[1fr_42%] items-end min-h-[calc(100vh-4rem)]">
