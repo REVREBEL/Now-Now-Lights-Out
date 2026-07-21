@@ -744,9 +744,7 @@ export default function App() {
                 </span>
               </div>
             </div>
-            <span className="text-[10px] tracking-[0.4em] block mb-5" style={{ color: PINK }}>Show Us Your Now Now Lights-Out Moment</span>
-            <h2 style={{ ...displaySx, fontSize: "clamp(3rem,7vw,5.5rem)", color: BLUSH, lineHeight: 0.88, marginBottom: "1.5rem" }}>
-              <span className="text-[12px] tracking-[0.4em] block mb-5" style={{ color: SAGE }}>Show Us Your Now Now Lights-Out Moment</span>
+            <span className="text-[12px] tracking-[0.4em] block mb-5" style={{ color: SAGE }}>Show Us Your Now Now Lights-Out Moment</span>
               <h2 style={{ ...displaySx, fontSize: "clamp(3rem,7vw,5.5rem)", color: PEACH, lineHeight: 0.88, marginBottom: "1.5rem" }}>
                 Your lights-out moment<br />
                 <span style={{ color: BLUSH }}>belongs here.</span>
@@ -764,9 +762,9 @@ export default function App() {
                   <span key={h} className="text-[12px] px-2.5 py-1.5 border tracking-wide" style={{ color: BLUSH, borderColor: `${BLUSH}22` }}>{h}</span>
                 ))}
               </div>
+            </div>
 
-
-              {/* Right — form */}
+            {/* Right — form */}
               <div className="border" style={{ borderColor: `${BLUSH}18` }}>
                 {submitted ? (
                   <div className="p-10 text-center">
