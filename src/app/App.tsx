@@ -703,7 +703,7 @@ export default function App() {
             </div>
             <div className="flex flex-wrap  gap-2 mb-8">
               {["#NowNowLightsOut", "#AfterNoHo", "#NoHoDreamMode"].map(t => (
-                <span key={t} className="px-3 py-1.5 font-displayr rounded-full text-xs tracking-wide border" style={{ color: LIME, borderColor: `${LIME}44` }}>{t}</span>
+                <span key={t} className="px-3 py-1.5 font-display rounded-full text-xs tracking-wide border" style={{ color: LIME, borderColor: `${LIME}44` }}>{t}</span>
               ))}
             </div>
             <button
