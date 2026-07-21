@@ -340,8 +340,8 @@ export default function App() {
       {/* NAV                                                                 */}
       {/* ════════════════════════════════════════════════════════════════════ */}
       <nav
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 py-6 mb-6"
-        style={{ background: BURGUNDY, backdropFilter: "blur(18px)", borderBottom: `1px solid rgba(247,183,251,0.08)` }}
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 py-4"
+        style={{ background: BURGUNDY, backdropFilter: "blur(10px)", borderBottom: `1px solid rgba(247,183,251,0.08)` }}
       >
         <div className="flex items-center gap-2.5">
           <Moon className="w-3.5 h-3.5" style={{ color: BLUSH }} />
@@ -357,10 +357,10 @@ export default function App() {
                 if (l === "Gallery") galleryRef.current?.scrollIntoView({ behavior: "smooth" });
                 if (l === "Submit") submitRef.current?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="text-[11px] tracking-[0.18em] transition-colors"
-              style={{ color: SAGE, background: "none", border: "none", cursor: "pointer" }}
-              onMouseEnter={e => (e.currentTarget.style.color = BLUSH)}
-              onMouseLeave={e => (e.currentTarget.style.color = SAGE)}
+              className="text-[12px] tracking-[0.18em] transition-colors"
+              style={{ color: BLUSH, background: "none", border: "none", cursor: "pointer" }}
+              onMouseEnter={e => (e.currentTarget.style.color = PINK)}
+              onMouseLeave={e => (e.currentTarget.style.color = BLUSH)}
             >
               {l}
             </button>
