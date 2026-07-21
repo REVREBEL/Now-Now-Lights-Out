@@ -631,7 +631,7 @@ export default function App() {
                 <button
                   key={tab.key}
                   onClick={() => setActiveCat(tab.key)}
-                  className="text-[12px] tracking-[0.15em] px-4 py-2.5 border-3 font-regular transition-all duration-200"
+                  className="text-[12px] tracking-[0.15em] px-4 py-2.5 border-2 font-regular transition-all duration-200"
                   style={{
                     background: active ? BURGUNDY : "transparent",
                     color: active ? BLUSH : `${BURGUNDY}77`,
@@ -745,8 +745,8 @@ export default function App() {
                 </span>
               </div>
             </div>
-            <span className="text-[12px] tracking-[0.4em] block mb-5" style={{ color: SAGE }}>Show Us Your Now Now Lights-Out Moment</span>
-              <h2 style={{ ...displaySx, fontSize: "clamp(3rem,7vw,5.5rem)", color: PEACH, lineHeight: 0.88, marginBottom: "1.5rem" }}>
+            <span className="text-[12px] tracking-[0.4em] block mb-5" style={{ color: BLUSH }}>Show Us Your Now Now Lights-Out Moment</span>
+              <h2 style={{ ...displaySx, fontSize: "clamp(3rem,7vw,5.5rem)", color: BLUSH, lineHeight: 0.88, marginBottom: "1.5rem" }}>
                 Your lights-out moment<br />
                 <span style={{ color: BLUSH }}>belongs here.</span>
               </h2>
@@ -760,7 +760,7 @@ export default function App() {
               </div>
               <div className="flex flex-wrap gap-2">
                 {HASHTAGS.map(h => (
-                  <span key={h} className="text-[12px] px-2.5 py-1.5 border tracking-wide" style={{ color: BLUSH, borderColor: `${BLUSH}22` }}>{h}</span>
+                  <span key={h} className="text-[12px] px-2.5 py-1.5 rounded-full border tracking-wide" style={{ color: BLUSH, borderColor: `${BLUSH}22` }}>{h}</span>
                 ))}
               </div>
             </div>
@@ -812,7 +812,7 @@ export default function App() {
 
                     {/* Name */}
                     <div>
-                      <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
+                      <label className="block text-[12px] tracking-[0.25em] mb-2" style={{ color: BLUSH }}>
                         Your Name
                       </label>
                       <input
@@ -830,11 +830,11 @@ export default function App() {
 
                     {/* Instagram handle */}
                     <div>
-                      <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
+                      <label className="block text-[12px] tracking-[0.25em] mb-2" style={{ color: BLUSH }}>
                         Instagram Handle
                       </label>
                       <div className="relative">
-                        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm select-none" style={{ color: SAGE }}>@</span>
+                        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm select-none" style={{ color: BLUSH }}>@</span>
                         <input
                           type="text"
                           required
@@ -851,7 +851,7 @@ export default function App() {
 
                     {/* Category */}
                     <div>
-                      <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
+                      <label className="block text-[12px] tracking-[0.25em] mb-2" style={{ color: BLUSH }}>
                         Category
                       </label>
                       <select
@@ -878,7 +878,7 @@ export default function App() {
 
                     {/* Caption */}
                     <div>
-                      <label className="block text-[10px] tracking-[0.25em] mb-2" style={{ color: SAGE }}>
+                      <label className="block text-[12px] tracking-[0.25em] mb-2" style={{ color: BLUSH }}>
                         Caption <span style={{ color: `${SAGE}66` }}>(optional)</span>
                       </label>
                       <textarea
@@ -920,23 +920,23 @@ export default function App() {
                 <Moon className="w-3.5 h-3.5" style={{ color: BLUSH }} />
                 <span style={{ ...displaySx, fontSize: "1rem", letterSpacing: "0.26em", color: PEACH, fontStyle: "normal" }}>NOW NOW NOHO</span>
               </div>
-              <p className="text-xs leading-relaxed" style={{ color: `${PEACH}55`, fontWeight: 400 }}>
+              <p className="text-regular leading-relaxed" style={{ color: `${PEACH}55`, fontWeight: 400 }}>
                 New York gave you stories. We gave you the mask.
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <span className="text-[10px] tracking-[0.3em] mb-1" style={{ color: SAGE }}>Campaign Tags</span>
+              <span className="text-[12px] tracking-[0.3em] mb-1" style={{ color: PEACH }}>Campaign Tags</span>
               {HASHTAGS.map(h => (
-                <span key={h} className="text-[11px] tracking-wide" style={{ color: `${PEACH}66` }}>{h}</span>
+                <span key={h} className="text-[14px] tracking-wide" style={{ color: `${PEACH}66` }}>{h}</span>
               ))}
             </div>
             <div className="flex flex-col gap-3">
-              <span className="text-[10px] tracking-[0.3em] mb-1" style={{ color: SAGE }}>Links</span>
+              <span className="text-[12px] tracking-[0.3em] mb-1" style={{ color: PEACH }}>Links</span>
               {["staynownow.com", "Shop the Sleep Kit", "Book a Stay", "Instagram"].map(l => (
                 <a
                   key={l}
                   href="#"
-                  className="text-[11px] tracking-wide transition-colors"
+                  className="text-[14px] tracking-wide transition-colors"
                   style={{ color: `${PEACH}66` }}
                   onMouseEnter={e => (e.currentTarget.style.color = BLUSH)}
                   onMouseLeave={e => (e.currentTarget.style.color = `${PEACH}66`)}
