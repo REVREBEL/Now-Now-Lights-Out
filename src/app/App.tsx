@@ -333,15 +333,15 @@ export default function App() {
         .marquee-track { animation: marquee 30s linear infinite; }
         ::-webkit-scrollbar { display: none; }
         * { scrollbar-width: none; }
-        select option { background: #160A10; color: #F9E2D3; }
+        select option { background: BURGUNDY, color: #F9E2D3; }
       `}</style>
 
       {/* ════════════════════════════════════════════════════════════════════ */}
       {/* NAV                                                                 */}
       {/* ════════════════════════════════════════════════════════════════════ */}
       <nav
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 py-4"
-        style={{ background: "rgba(10,5,8,0.9)", backdropFilter: "blur(18px)", borderBottom: `1px solid rgba(247,183,251,0.08)` }}
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 py-6 mb-6"
+        style={{ background: BURGUNDY, backdropFilter: "blur(18px)", borderBottom: `1px solid rgba(247,183,251,0.08)` }}
       >
         <div className="flex items-center gap-2.5">
           <Moon className="w-3.5 h-3.5" style={{ color: BLUSH }} />
@@ -403,7 +403,7 @@ export default function App() {
 
           {/* Left — copy */}
           <div className="flex flex-col justify-end px-6 md:px-12 lg:px-16 pb-16 pt-16 md:pt-0">
-            <p className="text-[12px] tracking-[0.45em] mb-6" style={{ color: SAGE, fontFamily: "monospace" }}>
+            <p className="text-[12px] tracking-[0.45em] mb-6" style={{ color: BLUSH, fontFamily: "monospace" }}>
               NOW NOW, LIGHTS OUT
             </p>
             <h1
@@ -426,13 +426,13 @@ export default function App() {
             >
               You Should.
             </h2>
-            <p className="text-base leading-relaxed mb-10 max-w-md" style={{ color: `${PEACH}99`, fontWeight: 300 }}>
+            <p className="text-base leading-relaxed mb-10 max-w-md" style={{ color: `${PEACH}`, fontWeight: 400 }}>
               Check in. Go out. Come back. Put the city on mute. Our signature Now Now sleep mask is your official permission slip to rest dramatically after a full day in New York.
             </p>
             <div className="flex flex-wrap gap-3 mb-10">
               <button
                 onClick={() => galleryRef.current?.scrollIntoView({ behavior: "smooth" })}
-                className="group flex items-center gap-3 px-7 py-4 text-sm font-bold tracking-[0.15em] transition-all duration-300"
+                className="group flex items-center gap-3 px-4 py-2 text-regular font-bold tracking-[0.15em] transition-all duration-300"
                 style={{ background: BLUSH, color: BURGUNDY }}
                 onMouseEnter={e => { const el = e.currentTarget; el.style.background = BURGUNDY; el.style.color = BLUSH; }}
                 onMouseLeave={e => { const el = e.currentTarget; el.style.background = BLUSH; el.style.color = BURGUNDY; }}
@@ -481,10 +481,10 @@ export default function App() {
             {/* Submission counter chip */}
             <div
               className="absolute top-14 right-5 z-10 px-4 py-3 border text-center"
-              style={{ background: "rgba(10,5,8,0.85)", borderColor: `${BLUSH}33`, backdropFilter: "blur(8px)" }}
+              style={{ background: BURGUNDY, borderColor: `${BLUSH}33`, backdropFilter: "blur(8px)" }}
             >
               <div style={{ ...displaySx, fontSize: "2rem", color: BLUSH, lineHeight: 1 }}>1,196</div>
-              <div className="text-[9px] tracking-[0.2em] mt-0.5" style={{ color: SAGE }}>Submissions</div>
+              <div className="text-[10px] tracking-[0.2em] mt-0.5" style={{ color: BLUSH }}>Submissions</div>
             </div>
           </div>
         </div>
