@@ -581,15 +581,15 @@ export default function App() {
                     />
                     <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,5,8,0.75) 0%, transparent 55%)" }} />
                     <div className="absolute bottom-3 left-3">
-                      <span className="text-[10px] tracking-[0.2em] rounded-full px-2 py-1" style={{ background: BLUSH, color: BURGUNDY, fontWeight: 700 }}>
+                      <span className="text-[12px] tracking-[0.2em] rounded-full px-2 py-1" style={{ background: BLUSH, color: BURGUNDY, fontWeight: 700 }}>
                         {meta.count} posts
                       </span>
                     </div>
                   </div>
-                  <h3 className="text-sm font-bold mb-1 leading-tight transition-colors" style={{ color: hovCat === key ? TEAL : BURGUNDY }}>
+                  <h3 className="text-base font-bold mb-1 leading-tight transition-colors" style={{ color: hovCat === key ? PINK : BURGUNDY }}>
                     {meta.label}
                   </h3>
-                  <p className="text-xs leading-snug" style={{ color: `${BURGUNDY}77`, fontWeight: 300 }}>{meta.desc}</p>
+                  <p className="text-sm leading-snug" style={{ color: `${BURGUNDY}77`, fontWeight: 400 }}>{meta.desc}</p>
                 </button>
               );
             })}
@@ -610,11 +610,11 @@ export default function App() {
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <span className="text-[10px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88`, fontFamily: "monospace" }}>
+              <span className="text-[14px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88`, fontFamily: "monospace" }}>
                 Guest Sleep Mode: Activated
               </span>
               <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BURGUNDY, lineHeight: 0.9 }}>
-                Guest Moments,<br /><span style={{ color: BLUSH }}>Sleep Mode On.</span>
+                Guest Moments,<br /><span style={{ color: PINK }}>Sleep Mode On.</span>
               </h2>
             </div>
             <div className="flex items-center gap-2" style={{ color: SAGE }}>
