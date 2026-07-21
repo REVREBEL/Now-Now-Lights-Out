@@ -413,7 +413,7 @@ export default function App() {
               <span style={{ color: BLUSH }}>Doesn&apos;t</span><br />
               Sleep.
             </h1>
-            <h2>
+            <h2
               style={{
                 ...displaySx,
                 fontSize: "clamp(5rem,13vw,12rem)",
@@ -423,6 +423,7 @@ export default function App() {
                 WebkitTextStroke: `2px ${BLUSH}`,
                 marginBottom: "2.5rem",
               }}
+            >
               You Should.
             </h2>
             <p className="text-base leading-relaxed mb-10 max-w-md" style={{ color: `${PEACH}99`, fontWeight: 300 }}>
