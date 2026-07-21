@@ -510,29 +510,29 @@ export default function App() {
       {/* ════════════════════════════════════════════════════════════════════ */}
       {/* HOW IT WORKS                                                        */}
       {/* ════════════════════════════════════════════════════════════════════ */}
-      <section style={{ background: PEACH, color: BURGUNDY }} className="py-24 px-6 md:px-12 lg:px-20">
+      <section style={{ background: PEACH, color: BLUSH }} className="py-24 px-6 md:px-12 lg:px-20">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <span className="text-[10px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88` }}>How to Go Lights Out</span>
-              <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BURGUNDY, lineHeight: 0.9 }}>
+              <span className="text-[10px] tracking-[0.4em] block mb-3" style={{ color: `${BLUSH}88` }}>How to Go Lights Out</span>
+              <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BLUSH, lineHeight: 0.9 }}>
                 Four Steps.<br />Then Lights Out.
               </h2>
             </div>
-            <p className="text-sm leading-relaxed max-w-xs" style={{ color: `${BURGUNDY}99`, fontWeight: 300 }}>
+            <p className="text-sm leading-relaxed max-w-xs" style={{ color: `${BLUSH}99`, fontWeight: 300 }}>
               Put on your mask, capture the moment, tag @staynownow with #NowNowLightsOut, and you could be featured or receive a monthly sleep perk.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-px" style={{ background: `${BURGUNDY}22` }}>
+          <div className="grid md:grid-cols-3 gap-px" style={{ background: `${BLUSH}22` }}>
             {[
               { n: "01", title: "Put on your sleep mask", body: "Your Now Now sleep mask is the official signal that sleep mode has been activated." },
               { n: "02", title: "Snap your lights-out moment", body: "Capture the cabin crash, the post-NoHo wind-down, the red-eye arrival, or wherever the city finally catches up with you." },
               { n: "03", title: "Tag and share", body: "Tag @staynownow and use #NowNowLightsOut. Selected moments may be featured, and one featured guest receives a sleep perk each month." },
             ].map(step => (
               <div key={step.n} className="p-10" style={{ background: PEACH }}>
-                <div style={{ ...displaySx, fontSize: "4.5rem", color: `${BURGUNDY}22`, lineHeight: 1, marginBottom: "1.5rem" }}>{step.n}</div>
-                <h3 style={{ ...displaySx, fontSize: "1.75rem", color: BURGUNDY, marginBottom: "0.75rem", lineHeight: 1.1, fontStyle: "normal" }}>{step.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: `${BURGUNDY}88`, fontWeight: 300 }}>{step.body}</p>
+                <div style={{ ...displaySx, fontSize: "4.5rem", color: `${BLUSH}22`, lineHeight: 1, marginBottom: "1.5rem" }}>{step.n}</div>
+                <h3 style={{ ...displaySx, fontSize: "1.75rem", color: BLUSH, marginBottom: "0.75rem", lineHeight: 1.1, fontStyle: "normal" }}>{step.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: `${BLUSH}88`, fontWeight: 300 }}>{step.body}</p>
               </div>
             ))}
           </div>
