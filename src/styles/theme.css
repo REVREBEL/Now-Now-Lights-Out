@@ -1,8 +1,10 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --font-display: "Ginestra", "Arial Narrow", "Helvetica Neue Condensed", sans-serif;
-  --font-body: "Saans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --app-font-display: "Ginestra", "Arial Narrow", "Helvetica Neue Condensed", sans-serif;
+  --app-font-body: "Saans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: var(--app-font-display);
+  --font-body: var(--app-font-body);
   --font-size: 16px;
   --background: #681238;
   --foreground: #F9E2D3;
@@ -45,8 +47,6 @@
 }
 
 .dark {
-  --font-display: var(--font-display);
-  --font-body: var(--font-body);
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.145 0 0);
@@ -84,8 +84,8 @@
 }
 
 @theme inline {
-  --font-display: var(--font-display);
-  --font-body: var(--font-body);
+  --font-display: var(--app-font-display);
+  --font-body: var(--app-font-body);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
