@@ -5,16 +5,16 @@ import {
 } from "lucide-react";
 
 // ─── Site images ─────────────────────────────────────────────────────────────
-import heroBg     from "../images/site/background-hero.jpg";
-import heroPost   from "../images/site/hero-main-post.jpg";
-import spotImg    from "../images/site/spotlight.jpg";
+import heroBg from "../images/site/background-hero.jpg";
+import heroPost from "../images/site/hero-main-post.jpg";
+import spotImg from "../images/site/spotlight.jpg";
 
 // ─── Category images ──────────────────────────────────────────────────────────
-import catCabin   from "../images/categories/cabin-crashers.jpg";
-import catNoho    from "../images/categories/after-noho.jpg";
+import catCabin from "../images/categories/cabin-crashers.jpg";
+import catNoho from "../images/categories/after-noho.jpg";
 import catMorning from "../images/categories/morning-after-mode.jpg";
-import catSolo    from "../images/categories/solo-sleep-club.jpg";
-import catRedeye  from "../images/categories/red-eye-arrivals.jpg";
+import catSolo from "../images/categories/solo-sleep-club.jpg";
+import catRedeye from "../images/categories/red-eye-arrivals.jpg";
 
 // ─── Campaign post images ─────────────────────────────────────────────────────
 import p01 from "../images/campaign/image_post_01.jpg";
@@ -36,14 +36,17 @@ import p16 from "../images/campaign/image_post_16.png";
 
 // ─── Brand tokens ─────────────────────────────────────────────────────────────
 const BURGUNDY = "#681238";
-const BLUSH    = "#F7B7FB";
-const PEACH    = "#F9E2D3";
-const TEAL     = "#005951";
-const CREAM    = "#F5F3ED";
-const SAGE     = "#96A480";
-const LIME     = "#b4f296"
-const DARK     = "#0A0508";
-const DARK2    = "#160A10";
+const BLUSH = "#f7b7fb";
+const PINK = "#cc007e";
+const PEACH = "#F9E2D3";
+const TEAL = "#005951";
+const CREAM = "#F5F3ED";
+const SAGE = "#005951";
+const LIME = "#b4f296"
+const GREEN = " #00bf63";
+const DARK = "#681238";
+const DARK2 = "#681238";
+
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type Cat = "all" | "cabin" | "noho" | "morning" | "solo" | "redeye";
@@ -63,20 +66,20 @@ interface Photo {
 
 // ─── Category metadata ────────────────────────────────────────────────────────
 const CAT_META: Record<Exclude<Cat, "all">, { label: string; desc: string; count: number; img: string }> = {
-  cabin:   { label: "Cabin Crashers",       desc: "Guests wearing the mask in their cabin.",      count: 318, img: catCabin   },
-  noho:    { label: "After NoHo",           desc: "Guests winding down after a night out.",          count: 241, img: catNoho   },
-  morning: { label: "Morning After Mode",   desc: "Sleep mask, coffee, messy hair, and recovery energy.",       count: 197, img: catMorning },
-  solo:    { label: "Solo Traveler Sleep Club",      desc: "Guests celebrating the freedom of traveling solo.",               count: 284, img: catSolo   },
-  redeye:  { label: "Red Eye Arrivals",     desc: "Travelers checking in after flights, trains, and late-night arrivals.",           count: 156, img: catRedeye },
+  cabin: { label: "Cabin Crashers", desc: "Guests wearing the mask in their cabin.", count: 318, img: catCabin },
+  noho: { label: "After NoHo", desc: "Guests winding down after a night out.", count: 241, img: catNoho },
+  morning: { label: "Morning After Mode", desc: "Sleep mask, coffee, messy hair, and recovery energy.", count: 197, img: catMorning },
+  solo: { label: "Solo Traveler Sleep Club", desc: "Guests celebrating the freedom of traveling solo.", count: 284, img: catSolo },
+  redeye: { label: "Red Eye Arrivals", desc: "Travelers checking in after flights, trains, and late-night arrivals.", count: 156, img: catRedeye },
 };
 
 const FILTER_TABS: { key: Cat; label: string }[] = [
-  { key: "all",     label: "All Moments"        },
-  { key: "cabin",   label: "Cabin Crashers"      },
-  { key: "noho",    label: "After NoHo"          },
-  { key: "morning", label: "Morning After Mode"  },
-  { key: "solo",    label: "Solo Traveler Sleep Club"     },
-  { key: "redeye",  label: "Red Eye Arrivals"    },
+  { key: "all", label: "All Moments" },
+  { key: "cabin", label: "Cabin Crashers" },
+  { key: "noho", label: "After NoHo" },
+  { key: "morning", label: "Morning After Mode" },
+  { key: "solo", label: "Solo Traveler Sleep Club" },
+  { key: "redeye", label: "Red Eye Arrivals" },
 ];
 
 // ─── Gallery data ─────────────────────────────────────────────────────────────
@@ -306,13 +309,13 @@ function GalleryCard({ photo }: { photo: Photo }) {
 
 // ─── App ──────────────────────────────────────────────────────────────────────
 export default function App() {
-  const [activeCat, setActiveCat]   = useState<Cat>("all");
-  const [form, setForm]             = useState({ name: "", handle: "", category: "", caption: "" });
-  const [submitted, setSubmitted]   = useState(false);
-  const [hovCat, setHovCat]         = useState<string | null>(null);
+  const [activeCat, setActiveCat] = useState<Cat>("all");
+  const [form, setForm] = useState({ name: "", handle: "", category: "", caption: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const [hovCat, setHovCat] = useState<string | null>(null);
 
   const galleryRef = useRef<HTMLElement>(null);
-  const submitRef  = useRef<HTMLElement>(null);
+  const submitRef = useRef<HTMLElement>(null);
 
   const filtered = activeCat === "all" ? PHOTOS : PHOTOS.filter(p => p.cat === activeCat);
 
@@ -352,7 +355,7 @@ export default function App() {
               key={l}
               onClick={() => {
                 if (l === "Gallery") galleryRef.current?.scrollIntoView({ behavior: "smooth" });
-                if (l === "Submit")  submitRef.current?.scrollIntoView({ behavior: "smooth" });
+                if (l === "Submit") submitRef.current?.scrollIntoView({ behavior: "smooth" });
               }}
               className="text-[11px] tracking-[0.18em] transition-colors"
               style={{ color: SAGE, background: "none", border: "none", cursor: "pointer" }}
@@ -522,9 +525,9 @@ export default function App() {
           </div>
           <div className="grid md:grid-cols-3 gap-px" style={{ background: `${BURGUNDY}22` }}>
             {[
-              { n: "01", title: "Put on your sleep mask",  body: "Your Now Now sleep mask is the official signal that sleep mode has been activated." },
-              { n: "02", title: "Snap your lights-out moment",        body: "Capture the cabin crash, the post-NoHo wind-down, the red-eye arrival, or wherever the city finally catches up with you." },
-              { n: "03", title: "Tag and share",      body: "Tag @staynownow and use #NowNowLightsOut. Selected moments may be featured, and one featured guest receives a sleep perk each month." },
+              { n: "01", title: "Put on your sleep mask", body: "Your Now Now sleep mask is the official signal that sleep mode has been activated." },
+              { n: "02", title: "Snap your lights-out moment", body: "Capture the cabin crash, the post-NoHo wind-down, the red-eye arrival, or wherever the city finally catches up with you." },
+              { n: "03", title: "Tag and share", body: "Tag @staynownow and use #NowNowLightsOut. Selected moments may be featured, and one featured guest receives a sleep perk each month." },
             ].map(step => (
               <div key={step.n} className="p-10" style={{ background: PEACH }}>
                 <div style={{ ...displaySx, fontSize: "4.5rem", color: `${BURGUNDY}22`, lineHeight: 1, marginBottom: "1.5rem" }}>{step.n}</div>
@@ -551,7 +554,7 @@ export default function App() {
             <button
               onClick={() => galleryRef.current?.scrollIntoView({ behavior: "smooth" })}
               className="self-start md:self-end flex items-center gap-2 uppercase font-body text-sm tracking-[0.15em] transition-colors"
-              style={{ color: BURGUNDY, background: "none", border: "none",  cursor: "pointer" }}
+              style={{ color: BURGUNDY, background: "none", border: "none", cursor: "pointer" }}
             >
               See Guest Moments <ArrowRight className="w-4 h-4" />
             </button>
@@ -630,17 +633,17 @@ export default function App() {
                   onClick={() => setActiveCat(tab.key)}
                   className="text-[11px] tracking-[0.15em] px-4 py-2.5 border transition-all duration-200"
                   style={{
-                    background:   active ? BURGUNDY : "transparent",
-                    color:        active ? BLUSH    : `${BURGUNDY}77`,
-                    borderColor:  active ? BURGUNDY : `${BURGUNDY}33`,
-                    fontWeight:   active ? 700 : 400,
+                    background: active ? BURGUNDY : "transparent",
+                    color: active ? BLUSH : `${BURGUNDY}77`,
+                    borderColor: active ? BURGUNDY : `${BURGUNDY}33`,
+                    fontWeight: active ? 700 : 400,
                   }}
                   onMouseEnter={e => { if (!active) { e.currentTarget.style.borderColor = BURGUNDY; e.currentTarget.style.color = BURGUNDY; } }}
                   onMouseLeave={e => { if (!active) { e.currentTarget.style.borderColor = `${BURGUNDY}33`; e.currentTarget.style.color = `${BURGUNDY}77`; } }}
                 >
                   {tab.label}
                   {tab.key !== "all" && (
-                    <span className="ml-2 text-[9px] opacity-60">{CAT_META[tab.key as Exclude<Cat,"all">].count}</span>
+                    <span className="ml-2 text-[9px] opacity-60">{CAT_META[tab.key as Exclude<Cat, "all">].count}</span>
                   )}
                 </button>
               );
@@ -669,7 +672,7 @@ export default function App() {
               className="absolute -bottom-4 -right-4 px-4 py-3 rounded-full flex items-center gap-3"
               style={{ background: LIME }}
             >
-              
+
               <Star className="w-4 h-4 fill-current" style={{ color: TEAL }} />
               <span className="text-[11px] tracking-[0.2em] font-display font-bold" style={{ color: TEAL }}>Editor&apos;s Pick</span>
             </div>
@@ -821,7 +824,7 @@ export default function App() {
                     className="w-full px-4 py-3 text-sm outline-none border transition-colors"
                     style={{ background: DARK2, color: PEACH, borderColor: `${BLUSH}22`, fontFamily: '"DM Sans", sans-serif' }}
                     onFocus={e => (e.target.style.borderColor = `${BLUSH}55`)}
-                    onBlur={e  => (e.target.style.borderColor = `${BLUSH}22`)}
+                    onBlur={e => (e.target.style.borderColor = `${BLUSH}22`)}
                   />
                 </div>
 
@@ -841,7 +844,7 @@ export default function App() {
                       className="w-full pl-9 pr-4 py-3 text-sm outline-none border transition-colors"
                       style={{ background: DARK2, color: PEACH, borderColor: `${BLUSH}22`, fontFamily: '"DM Sans", sans-serif' }}
                       onFocus={e => (e.target.style.borderColor = `${BLUSH}55`)}
-                      onBlur={e  => (e.target.style.borderColor = `${BLUSH}22`)}
+                      onBlur={e => (e.target.style.borderColor = `${BLUSH}22`)}
                     />
                   </div>
                 </div>
@@ -864,7 +867,7 @@ export default function App() {
                       cursor: "pointer",
                     }}
                     onFocus={e => (e.target.style.borderColor = `${BLUSH}55`)}
-                    onBlur={e  => (e.target.style.borderColor = `${BLUSH}22`)}
+                    onBlur={e => (e.target.style.borderColor = `${BLUSH}22`)}
                   >
                     <option value="" disabled>Select your category</option>
                     {(Object.keys(CAT_META) as Exclude<Cat, "all">[]).map(k => (
@@ -886,7 +889,7 @@ export default function App() {
                     className="w-full px-4 py-3 text-sm outline-none border transition-colors resize-none"
                     style={{ background: DARK2, color: PEACH, borderColor: `${BLUSH}22`, fontFamily: '"DM Sans", sans-serif' }}
                     onFocus={e => (e.target.style.borderColor = `${BLUSH}55`)}
-                    onBlur={e  => (e.target.style.borderColor = `${BLUSH}22`)}
+                    onBlur={e => (e.target.style.borderColor = `${BLUSH}22`)}
                   />
                 </div>
 
