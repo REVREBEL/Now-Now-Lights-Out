@@ -403,7 +403,7 @@ export default function App() {
 
           {/* Left — copy */}
           <div className="flex flex-col justify-end px-6 md:px-12 lg:px-16 pb-16 pt-16 md:pt-0">
-            <p className="text-[10px] tracking-[0.45em] mb-6" style={{ color: SAGE, fontFamily: "monospace" }}>
+            <p className="text-[12px] tracking-[0.45em] mb-6" style={{ color: SAGE, fontFamily: "monospace" }}>
               NOW NOW, LIGHTS OUT
             </p>
             <h1
@@ -514,7 +514,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <span className="text-[10px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88` }}>How to Go Lights Out</span>
+              <span className="text-[12px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88` }}>How to Go Lights Out</span>
               <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BURGUNDY, lineHeight: 0.9 }}>
                 Four Steps.<br />Then Lights Out.
               </h2>
@@ -546,7 +546,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
             <div>
-              <span className="text-[14px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88` }}>Featured Guest Moments</span>
+              <span className="text-[12px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88` }}>Featured Guest Moments</span>
               <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BURGUNDY, lineHeight: 0.9 }}>
                 Guest Sleep Mode:<br />Activated
               </h2>
@@ -610,7 +610,7 @@ export default function App() {
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <span className="text-[14px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88`, fontFamily: "monospace" }}>
+              <span className="text-[12px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88`, fontFamily: "monospace" }}>
                 Guest Sleep Mode: Activated
               </span>
               <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BURGUNDY, lineHeight: 0.9 }}>
@@ -680,7 +680,7 @@ export default function App() {
 
           {/* Text */}
           <div>
-            <span className="text-[10px] tracking-[0.4em] block mb-6" style={{ color: `${LIME}88` }}>Monthly Sleep Perk</span>
+            <span className="text-[12px] tracking-[0.4em] block mb-6" style={{ color: `${LIME}88` }}>Monthly Sleep Perk</span>
             <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4.5rem)", color: LIME, lineHeight: 0.88, marginBottom: "1.5rem" }}>
               Each month, one featured guest moment receives a sleep perk.
             </h2>
@@ -745,7 +745,7 @@ export default function App() {
                 </span>
               </div>
             </div>
-            <span className="text-[10px] tracking-[0.4em] block mb-5" style={{ color: SAGE }}>Show Us Your Now Now Lights-Out Moment</span>
+            <span className="text-[12px] tracking-[0.4em] block mb-5" style={{ color: SAGE }}>Show Us Your Now Now Lights-Out Moment</span>
             <h2 style={{ ...displaySx, fontSize: "clamp(3rem,7vw,5.5rem)", color: PEACH, lineHeight: 0.88, marginBottom: "1.5rem" }}>
               Your lights-out moment<br />
               <span style={{ color: BLUSH }}>belongs here.</span>
