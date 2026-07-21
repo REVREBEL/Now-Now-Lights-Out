@@ -259,7 +259,7 @@ function GalleryCard({ photo }: { photo: Photo }) {
         <div
           className="absolute top-3 right-3 z-10 px-2 py-1 text-[9px] tracking-[0.12em] rounded-full border"
           style={{
-            background: "rgba(10,5,8,0.72)",
+            background: "rgb(104, 18, 56,072) ",
             color: SAGE,
             borderColor: "rgba(150,164,128,0.3)",
             backdropFilter: "blur(4px)",
@@ -407,7 +407,7 @@ export default function App() {
               NOW NOW, LIGHTS OUT
             </p>
             <h1
-              style={{ ...displaySx, fontSize: "clamp(5rem,13vw,12rem)", lineHeight: 0.85, letterSpacing: "-0.01em", color: PEACH, marginBottom: "0.12em" }}
+              style={{ ...displaySx, fontSize: "clamp(5rem,13vw,12rem)", lineHeight: 0.85, letterSpacing: "-0.01em", color: BLUSH, marginBottom: "0.12em" }}
             >
               The City<br />
               <span style={{ color: BLUSH }}>Doesn&apos;t</span><br />
@@ -579,7 +579,7 @@ export default function App() {
                       className="w-full h-full object-cover transition-transform duration-700"
                       style={{ transform: hovCat === key ? "scale(1.06)" : "scale(1)" }}
                     />
-                    <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,5,8,0.75) 0%, transparent 55%)" }} />
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgb(104, 18, 56,0.75) 0%, transparent 55%)" }} />
                     <div className="absolute bottom-3 left-3">
                       <span className="text-[12px] tracking-[0.2em] rounded-full px-2 py-1" style={{ background: BLUSH, color: BURGUNDY, fontWeight: 700, border: `2px solid ${BURGUNDY}` }}>
                         {meta.count} posts
@@ -631,7 +631,7 @@ export default function App() {
                 <button
                   key={tab.key}
                   onClick={() => setActiveCat(tab.key)}
-                  className="text-[11px] tracking-[0.15em] px-4 py-2.5 border transition-all duration-200"
+                  className="text-[12px] tracking-[0.15em] px-4 py-2.5 border-3 font-regular transition-all duration-200"
                   style={{
                     background: active ? BURGUNDY : "transparent",
                     color: active ? BLUSH : `${BURGUNDY}77`,
