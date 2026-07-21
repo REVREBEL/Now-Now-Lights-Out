@@ -234,6 +234,7 @@ function GalleryCard({ photo }: { photo: Photo }) {
           className="absolute inset-0 transition-opacity duration-300"
           style={{
             background: "linear-gradient(to top, rgba(10,5,8,0.88) 0%, transparent 55%)",
+            background: "linear-gradient(to top, rgb(104, 18, 56,0.88) 0%, transparent 55%)",
             opacity: hov ? 0 : 1,
           }}
         />
@@ -242,6 +243,7 @@ function GalleryCard({ photo }: { photo: Photo }) {
           className="absolute inset-0 transition-opacity duration-300"
           style={{
             background: "linear-gradient(to top, rgba(10,5,8,0.96) 0%, rgba(10,5,8,0.52) 55%, rgba(10,5,8,0.08) 100%)",
+            background: "linear-gradient(to top, rgb(104, 18, 56,0.96)  0%, rrgb(104, 18, 56, 0.52) 55%, rgb(104, 18, 56, 0.56)  100%)",
             opacity: hov ? 1 : 0,
           }}
         />
@@ -587,6 +589,7 @@ export default function App() {
                     </div>
                   </div>
                   <h3 className="text-base font-bold mb-1 min-h-[2.5rem] leading-tight transition-colors" style={{ color: hovCat === key ? PINK : BURGUNDY }}>
+                  <h3 className="text-base font-bold mb-1  leading-tight transition-colors" style={{ color: hovCat === key ? PINK : BURGUNDY }}>
                     {meta.label}
                   </h3>
                   <p className="text-sm leading-snug flex-1" style={{ color: `${BURGUNDY}77`, fontWeight: 400 }}>{meta.desc}</p>
@@ -751,16 +754,20 @@ export default function App() {
               <span style={{ color: BLUSH }}>belongs here.</span>
             </h2>
             <p className="text-sm leading-relaxed mb-8 max-w-sm" style={{ color: `${PEACH}77`, fontWeight: 300 }}>
+            <p className="text-regular leading-relaxed mb-8 max-w-sm" style={{ color: `${BLUSH}`, fontWeight: 300 }}>
               Post a Photo or Reel wearing your Now Now Sleep Mask, Tag{" "}
               <span style={{ color: BLUSH }}>@staynownow</span>, and use #NowNowLightsOut. Selected Guest Moments may be Featured, and Each Month One Featured Guest Receives a Sleep Perk.
+              <span style={{ color: PEACH }}>@staynownow</span>, and use #NowNowLightsOut. Selected Guest Moments may be Featured, and Each Month One Featured Guest Receives a Sleep Perk.
             </p>
             <div className="flex items-center gap-3 text-sm mb-6" style={{ color: SAGE }}>
+            <div className="flex items-center gap-3 text-sm mb-6" style={{ color: PEACH }}>
               <Instagram className="w-4 h-4 flex-shrink-0" />
               <span className="tracking-[0.12em]">@staynownow</span>
             </div>
             <div className="flex flex-wrap gap-2">
               {HASHTAGS.map(h => (
                 <span key={h} className="text-[10px] px-2.5 py-1.5 border tracking-wide" style={{ color: BLUSH, borderColor: `${BLUSH}22` }}>{h}</span>
+                <span key={h} className="text-[12px] px-2.5 py-1.5 border tracking-wide" style={{ color: BLUSH, borderColor: `${BLUSH}22` }}>{h}</span>
               ))}
             </div>
           </div>
