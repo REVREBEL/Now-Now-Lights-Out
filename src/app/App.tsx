@@ -546,7 +546,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
             <div>
-              <span className="text-[10px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88` }}>Featured Guest Moments</span>
+              <span className="text-[14px] tracking-[0.4em] block mb-3" style={{ color: `${BURGUNDY}88` }}>Featured Guest Moments</span>
               <h2 style={{ ...displaySx, fontSize: "clamp(2.5rem,5vw,4rem)", color: BURGUNDY, lineHeight: 0.9 }}>
                 Guest Sleep Mode:<br />Activated
               </h2>
