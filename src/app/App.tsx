@@ -392,14 +392,14 @@ export default function App() {
       {/* ════════════════════════════════════════════════════════════════════ */}
       {/* HERO                                                                */}
       {/* ════════════════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-end" style={{ paddingTop: "8rem" }}>
+      <section className="relative min-h-screen flex items-end" style={{ paddingTop: "6rem" }}>
         {/* Ambient glow */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: `radial-gradient(ellipse 70% 60% at 15% 60%, rgba(104,18,56,0.2) 0%, transparent 65%), radial-gradient(ellipse 50% 40% at 85% 30%, rgba(0,89,81,0.1) 0%, transparent 65%)` }}
         />
 
-        <div className="relative z-10 w-full grid md:grid-cols-[1fr_42%] items-end min-h-[calc(100vh-8rem)]">
+        <div className="relative z-10 w-full grid md:grid-cols-[1fr_42%] items-end min-h-[calc(100vh-6rem)]">
 
           {/* Left — copy */}
           <div className="flex flex-col justify-end px-6 md:px-12 lg:px-16 pb-16 pt-16 md:pt-0">
